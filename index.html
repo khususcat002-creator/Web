@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ELYSIAN TOOLS</title>
+    <title>ELYSIAN Tools - Platform Tools Digital Terbaik 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
         /* ============================================================ */
-        /* LOADING SCREEN - YOUTUBE THUMBNAIL STYLE (TANPA PLAY BUTTON) */
+        /* LOADING SCREEN */
         /* ============================================================ */
         #loadingScreen {
             position: fixed;
@@ -445,7 +445,7 @@
             --bg-body: #0a0e1a;
             --bg-card: rgba(18, 22, 36, 0.8);
             --bg-hero: linear-gradient(135deg, #0d1430 0%, #1a2a5a 100%);
-            --bg-header: rgba(18, 22, 36, 0.8);
+            --bg-header: rgba(18, 22, 36, 0.7);
             --text-primary: #e8edf5;
             --text-secondary: #8aabda;
             --text-muted: #6a80b0;
@@ -469,6 +469,121 @@
             overflow-x: hidden;
             scroll-behavior: smooth;
             transition: background 0.3s, color 0.3s;
+            position: relative;
+        }
+
+        /* ============================================================ */
+        /* BACKGROUND ANIMATIONS */
+        /* ============================================================ */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(96, 165, 250, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(37, 99, 235, 0.02) 0%, transparent 50%),
+                radial-gradient(circle at 60% 60%, rgba(96, 165, 250, 0.02) 0%, transparent 50%);
+            z-index: 0;
+            pointer-events: none;
+            animation: backgroundPulse 10s ease-in-out infinite;
+        }
+
+        @keyframes backgroundPulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Floating particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(37, 99, 235, 0.15);
+            border-radius: 50%;
+            animation: particleFloat linear infinite;
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-duration: 15s; animation-delay: 0s; width: 6px; height: 6px; }
+        .particle:nth-child(2) { left: 20%; animation-duration: 20s; animation-delay: 2s; width: 3px; height: 3px; }
+        .particle:nth-child(3) { left: 30%; animation-duration: 18s; animation-delay: 4s; width: 8px; height: 8px; }
+        .particle:nth-child(4) { left: 40%; animation-duration: 22s; animation-delay: 1s; width: 4px; height: 4px; }
+        .particle:nth-child(5) { left: 50%; animation-duration: 16s; animation-delay: 3s; width: 5px; height: 5px; }
+        .particle:nth-child(6) { left: 60%; animation-duration: 19s; animation-delay: 5s; width: 7px; height: 7px; }
+        .particle:nth-child(7) { left: 70%; animation-duration: 21s; animation-delay: 2s; width: 3px; height: 3px; }
+        .particle:nth-child(8) { left: 80%; animation-duration: 17s; animation-delay: 4s; width: 6px; height: 6px; }
+        .particle:nth-child(9) { left: 90%; animation-duration: 23s; animation-delay: 1s; width: 4px; height: 4px; }
+        .particle:nth-child(10) { left: 15%; animation-duration: 14s; animation-delay: 3s; width: 5px; height: 5px; }
+        .particle:nth-child(11) { left: 45%; animation-duration: 20s; animation-delay: 0s; width: 8px; height: 8px; }
+        .particle:nth-child(12) { left: 75%; animation-duration: 18s; animation-delay: 2s; width: 3px; height: 3px; }
+        .particle:nth-child(13) { left: 55%; animation-duration: 22s; animation-delay: 4s; width: 6px; height: 6px; }
+        .particle:nth-child(14) { left: 25%; animation-duration: 16s; animation-delay: 1s; width: 4px; height: 4px; }
+        .particle:nth-child(15) { left: 85%; animation-duration: 19s; animation-delay: 3s; width: 7px; height: 7px; }
+
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) rotate(0deg) scale(1); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-100vh) rotate(720deg) scale(0.5); opacity: 0; }
+        }
+
+        /* Glowing orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            pointer-events: none;
+            animation: orbFloat 20s ease-in-out infinite;
+        }
+
+        .orb:nth-child(1) {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.06), transparent);
+            top: -100px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .orb:nth-child(2) {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(96, 165, 250, 0.05), transparent);
+            bottom: -50px;
+            left: -50px;
+            animation-delay: -7s;
+        }
+
+        .orb:nth-child(3) {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.04), transparent);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -14s;
+        }
+
+        @keyframes orbFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(10px, -10px) scale(1.05); }
         }
 
         .container {
@@ -493,9 +608,19 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-14px); }
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
         }
 
         @keyframes pulseGlow {
@@ -528,28 +653,74 @@
             40% { opacity: 1; transform: scale(1); }
         }
 
+        @keyframes borderGlow {
+            0%, 100% { border-color: rgba(59, 130, 246, 0.1); }
+            50% { border-color: rgba(59, 130, 246, 0.3); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes borderPulse {
+            0%, 100% { border-color: rgba(59, 130, 246, 0.1); }
+            50% { border-color: rgba(59, 130, 246, 0.25); }
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.1), 0 0 60px rgba(37, 99, 235, 0.05); }
+            50% { box-shadow: 0 0 40px rgba(37, 99, 235, 0.2), 0 0 80px rgba(37, 99, 235, 0.1); }
+        }
+
         /* ============================================================ */
-        /* HEADER */
+        /* HEADER - MODERN NAVIGATION */
         /* ============================================================ */
         .header-top {
             display: flex;
             align-items: center;
             gap: 1rem;
-            padding: 1rem 1.5rem;
+            padding: 0.8rem 1.5rem;
             background: var(--bg-header);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-radius: 24px;
-            border: 2px solid var(--border-color);
-            box-shadow: var(--shadow);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
             margin-bottom: 2rem;
             animation: fadeInDown 0.6s ease forwards;
-            transition: 0.3s;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
             position: relative;
+            overflow: hidden;
+            animation: glowPulse 4s ease-in-out infinite;
+        }
+
+        .header-top::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(59, 130, 246, 0.03) 0%, transparent 60%);
+            animation: float 8s ease-in-out infinite;
+            pointer-events: none;
         }
 
         .header-top:hover {
-            box-shadow: var(--shadow-hover);
+            border-color: rgba(59, 130, 246, 0.15);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
         }
 
         .logo-wrapper {
@@ -557,21 +728,23 @@
             align-items: center;
             gap: 14px;
             flex-shrink: 0;
+            position: relative;
+            z-index: 1;
         }
 
         .logo-icon {
-            width: 56px;
-            height: 56px;
+            width: 50px;
+            height: 50px;
             background: linear-gradient(135deg, #2563eb, #60a5fa, #93bbfc);
-            border-radius: 18px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 24px;
             color: #fff;
             box-shadow: 0 8px 30px rgba(37, 99, 235, 0.3);
             animation: float 3s ease-in-out infinite;
-            transition: 0.3s;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
             position: relative;
             overflow: hidden;
         }
@@ -593,7 +766,8 @@
         }
 
         .logo-icon:hover {
-            transform: scale(1.05) rotate(-3deg);
+            transform: scale(1.05) rotate(-3deg) translateY(-2px);
+            box-shadow: 0 12px 40px rgba(37, 99, 235, 0.4);
         }
 
         .logo-text {
@@ -603,7 +777,7 @@
         }
 
         .logo-text .brand-name {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 900;
             letter-spacing: -1px;
             color: var(--text-primary);
@@ -619,7 +793,7 @@
         }
 
         .logo-text .brand-tagline {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             font-weight: 600;
             color: var(--text-light);
             letter-spacing: 2px;
@@ -629,65 +803,113 @@
         .header-right {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.8rem;
             margin-left: auto;
+            position: relative;
+            z-index: 1;
         }
 
-        .header-nav {
+        .nav-modern {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.3rem;
+            border-radius: 16px;
+            border: 1px solid rgba(59, 130, 246, 0.06);
         }
 
-        .header-nav a {
+        .nav-modern a {
             color: var(--text-muted);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.3s;
+            font-size: 0.85rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
             position: relative;
-            padding: 4px 0;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .header-nav a::after {
+        .nav-modern a i {
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-modern a::before {
             content: '';
             position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            transform: scale(0.8);
+            z-index: -1;
+        }
+
+        .nav-modern a:hover {
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .nav-modern a:hover::before {
+            opacity: 0.15;
+            transform: scale(1);
+        }
+
+        .nav-modern a:hover i {
+            animation: float 2s ease-in-out infinite;
+        }
+
+        .nav-modern a.active {
+            color: #fff;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        .nav-modern a.active i {
+            animation: float 2s ease-in-out infinite;
+        }
+
+        .nav-modern a .nav-indicator {
+            position: absolute;
             bottom: -2px;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 0;
-            height: 2.5px;
+            height: 2px;
             background: linear-gradient(90deg, #2563eb, #60a5fa);
-            transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
             border-radius: 10px;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
-        .header-nav a:hover::after,
-        .header-nav a.active::after {
-            width: 100%;
+        .nav-modern a.active .nav-indicator {
+            width: 60%;
         }
 
-        .header-nav a:hover {
-            color: #2563eb;
-        }
-
-        .header-nav a.active {
-            color: #2563eb;
+        .nav-modern a:hover .nav-indicator {
+            width: 40%;
         }
 
         .download-info {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 600;
             color: var(--text-muted);
             display: flex;
             align-items: center;
             gap: 6px;
-            padding: 4px 12px;
-            border-radius: 20px;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
             border: 1.5px solid var(--border-color);
-            background: var(--bg-card);
-            transition: 0.3s;
+            background: rgba(37, 99, 235, 0.05);
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
             white-space: nowrap;
+            cursor: pointer;
         }
 
         .download-info i {
@@ -698,40 +920,58 @@
         .download-info:hover {
             border-color: #2563eb;
             color: #2563eb;
-            transform: scale(1.02);
+            transform: scale(1.05);
+            background: rgba(37, 99, 235, 0.1);
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15);
         }
 
         .theme-toggle {
-            width: 44px;
-            height: 44px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
             border: 2px solid var(--border-color);
             background: var(--bg-card);
             color: var(--text-primary);
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             box-shadow: var(--shadow);
             position: relative;
             overflow: hidden;
             flex-shrink: 0;
         }
 
+        .theme-toggle::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.1), transparent);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .theme-toggle:hover::before {
+            opacity: 1;
+        }
+
         .theme-toggle:hover {
-            transform: scale(1.05) rotate(10deg);
+            transform: scale(1.1) rotate(15deg);
             box-shadow: var(--shadow-hover);
             border-color: #2563eb;
         }
 
         .theme-toggle i {
-            transition: 0.3s;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
         }
 
         .theme-toggle:hover i {
-            animation: spin 0.6s ease;
+            animation: spin 0.8s ease;
         }
 
         /* ============================================================ */
@@ -747,11 +987,11 @@
             border-radius: 30px;
             background: var(--bg-hero);
             border: 1px solid var(--border-color);
-            animation: fadeInUp 0.8s ease forwards;
+            animation: fadeInUp 0.8s ease forwards, borderGlow 3s ease-in-out infinite, glowPulse 4s ease-in-out infinite;
             position: relative;
             overflow: hidden;
             text-align: center;
-            transition: 0.3s;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .hero-main::before {
@@ -764,6 +1004,23 @@
             background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
             animation: float 8s ease-in-out infinite;
             pointer-events: none;
+        }
+
+        .hero-main::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 40%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+            animation: float 10s ease-in-out infinite reverse;
+            pointer-events: none;
+        }
+
+        .hero-main:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
         }
 
         .hero-main .badge {
@@ -780,6 +1037,7 @@
             animation: pulseGlow 2s ease-in-out infinite;
             position: relative;
             z-index: 1;
+            backdrop-filter: blur(10px);
         }
 
         .hero-main h1 {
@@ -790,11 +1048,17 @@
             color: var(--text-primary);
             position: relative;
             z-index: 1;
+            animation: fadeInScale 0.8s ease forwards;
         }
 
         .hero-main h1 span {
-            color: #2563eb;
-            position: relative;
+            background: linear-gradient(90deg, #2563eb, #60a5fa, #93bbfc, #60a5fa, #2563eb);
+            background-size: 300% auto;
+            animation: shimmer 3s linear infinite, float 4s ease-in-out infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
         }
 
         .hero-main h1 span::after {
@@ -817,6 +1081,9 @@
             font-weight: 400;
             position: relative;
             z-index: 1;
+            animation: fadeInUp 0.6s ease forwards;
+            animation-delay: 0.2s;
+            opacity: 0;
         }
 
         .hero-logo-box {
@@ -824,7 +1091,7 @@
             max-width: 640px;
             aspect-ratio: 16 / 9;
             border-radius: 20px;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.05);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -832,20 +1099,39 @@
             cursor: pointer;
             position: relative;
             z-index: 1;
-            border: 3px solid var(--border-color);
+            border: 2px solid var(--border-color);
             box-shadow: var(--shadow);
-            transition: 0.4s;
+            transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+            animation: fadeInScale 0.8s ease forwards, glowPulse 4s ease-in-out infinite;
+            animation-delay: 0.1s;
+            opacity: 0;
+        }
+
+        .hero-logo-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent, rgba(37, 99, 235, 0.03), transparent);
+            animation: shimmer 6s linear infinite;
+            background-size: 300% 100%;
+            pointer-events: none;
         }
 
         .hero-logo-box:hover {
             transform: scale(1.02) rotate(-1deg);
             box-shadow: var(--shadow-hover);
+            border-color: rgba(37, 99, 235, 0.2);
         }
 
         .hero-logo-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .hero-logo-box:hover img {
+            transform: scale(1.05);
         }
 
         .btn-start {
@@ -857,7 +1143,7 @@
             font-size: 1.2rem;
             color: #fff;
             cursor: pointer;
-            transition: 0.4s;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
             box-shadow: 0 8px 35px rgba(37, 99, 235, 0.35);
             position: relative;
             z-index: 1;
@@ -866,6 +1152,9 @@
             align-items: center;
             gap: 12px;
             letter-spacing: 0.5px;
+            animation: fadeInUp 0.6s ease forwards;
+            animation-delay: 0.3s;
+            opacity: 0;
         }
 
         .btn-start::after {
@@ -895,19 +1184,33 @@
 
         .btn-start i {
             font-size: 1.4rem;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
 
         .btn-start:hover i {
-            transform: translateX(4px);
+            animation: float 2s ease-in-out infinite;
         }
 
         /* ============================================================ */
-        /* HERO TOOLS CARD */
+        /* HERO TOOLS CARD - HOME */
         /* ============================================================ */
         .hero-tools-section {
             margin-bottom: 4rem;
             padding: 2rem 0;
+            position: relative;
+        }
+
+        .hero-tools-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+            animation: float 10s ease-in-out infinite;
         }
 
         .hero-tools-section .section-label {
@@ -917,6 +1220,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 0.5rem;
+            animation: slideInLeft 0.6s ease forwards;
         }
 
         .hero-tools-section h2 {
@@ -924,6 +1228,7 @@
             font-weight: 800;
             margin-bottom: 1.5rem;
             color: var(--text-primary);
+            animation: slideInRight 0.6s ease forwards;
         }
 
         .hero-tools-grid {
@@ -940,10 +1245,55 @@
             padding: 2rem 1.5rem;
             text-align: center;
             cursor: default;
-            animation: fadeInUp 0.6s ease forwards;
             border: 2px solid var(--border-color);
             box-shadow: var(--shadow);
-            transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards, borderPulse 3s ease-in-out infinite;
+        }
+
+        .hero-tool-card:nth-child(1) { animation-delay: 0.05s; }
+        .hero-tool-card:nth-child(2) { animation-delay: 0.1s; }
+        .hero-tool-card:nth-child(3) { animation-delay: 0.15s; }
+        .hero-tool-card:nth-child(4) { animation-delay: 0.2s; }
+        .hero-tool-card:nth-child(5) { animation-delay: 0.25s; }
+        .hero-tool-card:nth-child(6) { animation-delay: 0.3s; }
+        .hero-tool-card:nth-child(7) { animation-delay: 0.35s; }
+        .hero-tool-card:nth-child(8) { animation-delay: 0.4s; }
+        .hero-tool-card:nth-child(9) { animation-delay: 0.45s; }
+
+        .hero-tool-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 40%, rgba(37, 99, 235, 0.05) 0%, transparent 60%);
+            transition: all 0.6s ease;
+            pointer-events: none;
+        }
+
+        .hero-tool-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 26px;
+            background: linear-gradient(135deg, transparent, rgba(37, 99, 235, 0.03), transparent);
+            opacity: 0;
+            transition: all 0.6s ease;
+            pointer-events: none;
+        }
+
+        .hero-tool-card:hover::before {
+            transform: scale(1.5);
+        }
+
+        .hero-tool-card:hover::after {
+            opacity: 1;
         }
 
         .hero-tool-card:hover {
@@ -958,6 +1308,12 @@
             margin-bottom: 1rem;
             display: inline-block;
             animation: float 4s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        .hero-tool-card:hover .icon {
+            transform: scale(1.1) rotate(-5deg);
+            animation: float 2s ease-in-out infinite;
         }
 
         .hero-tool-card h3 {
@@ -982,6 +1338,46 @@
             padding: 0.2rem 1rem;
             border-radius: 20px;
             margin-top: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .hero-tool-card:hover .badge-tool {
+            background: rgba(37, 99, 235, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* ============================================================ */
+        /* HERO TOOLS CARD - TOOLS PAGE (BISA DI KLIK) */
+        /* ============================================================ */
+        .hero-tools-section-tools .hero-tool-card {
+            cursor: pointer;
+        }
+
+        .hero-tools-section-tools .hero-tool-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(37, 99, 235, 0.3);
+        }
+
+        .hero-tools-section-tools .hero-tool-card:active {
+            transform: scale(0.97);
+        }
+
+        .hero-tools-section-tools .hero-tool-card .click-hint {
+            font-size: 0.65rem;
+            color: var(--text-light);
+            margin-top: 0.8rem;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .hero-tools-section-tools .hero-tool-card:hover .click-hint {
+            opacity: 1;
+            color: #2563eb;
+        }
+
+        .hero-tools-section-tools .hero-tool-card .click-hint i {
+            color: #2563eb;
+            animation: float 2s ease-in-out infinite;
         }
 
         /* ============================================================ */
@@ -992,12 +1388,12 @@
             background: var(--bg-hero);
             border-radius: 34px;
             text-align: center;
-            animation: fadeInUp 0.8s ease forwards;
+            animation: fadeInUp 0.8s ease forwards, borderGlow 3s ease-in-out infinite, glowPulse 4s ease-in-out infinite;
             position: relative;
             overflow: hidden;
             border: 1px solid var(--border-color);
             margin-bottom: 4rem;
-            transition: 0.3s;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .hero-pricing::before {
@@ -1010,6 +1406,23 @@
             background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
             animation: float 8s ease-in-out infinite reverse;
             pointer-events: none;
+        }
+
+        .hero-pricing::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            right: -10%;
+            width: 30%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+            animation: float 10s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .hero-pricing:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
         }
 
         .hero-pricing .badge-free {
@@ -1025,6 +1438,8 @@
             margin-bottom: 1rem;
             position: relative;
             z-index: 1;
+            backdrop-filter: blur(10px);
+            animation: pulseGlow 2s ease-in-out infinite;
         }
 
         .hero-pricing h2 {
@@ -1042,12 +1457,17 @@
             margin: 0.5rem 0;
             position: relative;
             z-index: 1;
+            background: linear-gradient(90deg, #2563eb, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-pricing .price span {
             font-size: 1.2rem;
             font-weight: 400;
             color: var(--text-muted);
+            -webkit-text-fill-color: var(--text-muted);
         }
 
         .hero-pricing .desc {
@@ -1078,11 +1498,20 @@
             font-size: 0.9rem;
             font-weight: 500;
             justify-content: center;
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
         }
+
+        .hero-pricing .features-grid .feature:nth-child(1) { animation-delay: 0.1s; }
+        .hero-pricing .features-grid .feature:nth-child(2) { animation-delay: 0.2s; }
+        .hero-pricing .features-grid .feature:nth-child(3) { animation-delay: 0.3s; }
+        .hero-pricing .features-grid .feature:nth-child(4) { animation-delay: 0.4s; }
+        .hero-pricing .features-grid .feature:nth-child(5) { animation-delay: 0.5s; }
 
         .hero-pricing .features-grid .feature i {
             color: #22c55e;
             font-size: 1rem;
+            animation: scalePulse 2s ease-in-out infinite;
         }
 
         .btn-pricing {
@@ -1094,7 +1523,7 @@
             font-size: 1.1rem;
             color: #fff;
             cursor: pointer;
-            transition: 0.4s;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
             box-shadow: 0 8px 35px rgba(37, 99, 235, 0.3);
             position: relative;
             z-index: 1;
@@ -1127,6 +1556,11 @@
 
         .btn-pricing i {
             font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-pricing:hover i {
+            animation: float 2s ease-in-out infinite;
         }
 
         /* ============================================================ */
@@ -1144,8 +1578,8 @@
             display: none;
             align-items: center;
             gap: 14px;
-            transition: 0.3s;
-            animation: fadeInUp 0.5s ease forwards;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            animation: fadeInUp 0.5s ease forwards, glowPulse 4s ease-in-out infinite;
         }
 
         .search-wrapper.visible {
@@ -1155,16 +1589,18 @@
         .search-wrapper:focus-within {
             border-color: #2563eb;
             box-shadow: 0 4px 30px var(--glow-color);
+            transform: translateY(-2px);
         }
 
         .search-wrapper i {
             color: var(--text-light);
             font-size: 1.1rem;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
 
         .search-wrapper:focus-within i {
             color: #2563eb;
+            animation: float 2s ease-in-out infinite;
         }
 
         .search-wrapper input {
@@ -1194,124 +1630,6 @@
         }
 
         /* ============================================================ */
-        /* KATEGORI TABS */
-        /* ============================================================ */
-        #category-section {
-            scroll-margin-top: 80px;
-            display: none;
-            animation: expandIn 0.6s ease forwards;
-        }
-
-        #category-section.visible {
-            display: block;
-        }
-
-        .category-tabs {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 2.5rem;
-        }
-
-        .category-tab {
-            padding: 0.7rem 2rem;
-            border-radius: 60px;
-            border: 2px solid var(--border-color);
-            background: var(--bg-card);
-            backdrop-filter: blur(8px);
-            color: var(--text-muted);
-            font-weight: 700;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .category-tab::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, #2563eb, #60a5fa);
-            transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-            z-index: -1;
-        }
-
-        .category-tab:hover::before,
-        .category-tab.active::before {
-            left: 0;
-        }
-
-        .category-tab:hover {
-            border-color: #2563eb;
-            color: #2563eb;
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 10px 30px var(--glow-color);
-        }
-
-        .category-tab.active {
-            border-color: #2563eb;
-            color: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 35px var(--glow-color);
-        }
-
-        .category-tab.active::before {
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
-        }
-
-        .category-tab i {
-            transition: 0.4s;
-        }
-
-        .category-tab:hover i,
-        .category-tab.active i {
-            animation: float 2s ease-in-out infinite;
-        }
-
-        /* ============================================================ */
-        /* CONTENT WRAPPER */
-        /* ============================================================ */
-        #content-wrapper {
-            min-height: 50px;
-        }
-
-        .category-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 1rem;
-            animation: fadeInUp 0.5s ease forwards;
-        }
-
-        .category-header i {
-            font-size: 1.8rem;
-            color: #2563eb;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .category-header h2 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-            color: var(--text-primary);
-        }
-
-        .category-divider {
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, #2563eb, #60a5fa, #93bbfc);
-            border-radius: 10px;
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        /* ============================================================ */
         /* WRAPPER CARD */
         /* ============================================================ */
         .brat-wrapper,
@@ -1330,9 +1648,43 @@
             border: 2px solid var(--border-color);
             box-shadow: var(--shadow);
             margin-top: 1.5rem;
-            animation: fadeInUp 0.6s ease forwards;
+            animation: fadeInUp 0.6s ease forwards, glowPulse 4s ease-in-out infinite;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            display: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brat-wrapper::before,
+        .converter-wrapper::before,
+        .sertifikat-wrapper::before,
+        .ektp-wrapper::before,
+        .iqc-wrapper::before,
+        .fakedev-wrapper::before,
+        .fakedana-wrapper::before,
+        .spotify-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 40%, rgba(37, 99, 235, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+            animation: float 10s ease-in-out infinite;
+        }
+
+        .brat-wrapper.show,
+        .converter-wrapper.show,
+        .sertifikat-wrapper.show,
+        .ektp-wrapper.show,
+        .iqc-wrapper.show,
+        .fakedev-wrapper.show,
+        .fakedana-wrapper.show,
+        .spotify-wrapper.show {
+            display: block;
+            animation: fadeInUp 0.6s ease forwards;
         }
 
         .brat-wrapper:hover,
@@ -1370,7 +1722,361 @@
         }
 
         /* ============================================================ */
-        /* BRAT & SERTIFIKAT */
+        /* DEEPSEEK AI CHAT */
+        /* ============================================================ */
+        .deepseek-wrapper {
+            max-width: 920px;
+            width: 100%;
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border-radius: 32px;
+            padding: 0;
+            border: 2px solid var(--border-color);
+            box-shadow: var(--shadow);
+            margin-top: 1.5rem;
+            animation: fadeInUp 0.6s ease forwards, glowPulse 4s ease-in-out infinite;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            display: none;
+            position: relative;
+        }
+
+        .deepseek-wrapper.show {
+            display: block;
+        }
+
+        .deepseek-wrapper:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(37, 99, 235, 0.15);
+        }
+
+        .deepseek-hero-box {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: linear-gradient(135deg, #0d1430 0%, #1a2a5a 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .deepseek-hero-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 40%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+            animation: float 10s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .deepseek-hero-box img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .deepseek-hero-box .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(13, 20, 48, 0.7) 0%, rgba(26, 42, 90, 0.6) 100%);
+            z-index: 0;
+        }
+
+        .deepseek-hero-box .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .deepseek-hero-box .hero-icon {
+            font-size: 4.5rem;
+            color: #60a5fa;
+            margin-bottom: 0.5rem;
+            animation: float 4s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 0 40px rgba(37, 99, 235, 0.2));
+        }
+
+        .deepseek-hero-box .hero-title {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .deepseek-hero-box .hero-title span {
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .deepseek-hero-box .hero-desc {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            margin-top: 4px;
+        }
+
+        .deepseek-hero-box .hero-badge-ai {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.25);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: #60a5fa;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1;
+            margin-top: 0.5rem;
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        .deepseek-chat-area {
+            padding: 2rem 2rem 1.5rem;
+        }
+
+        .deepseek-chat-box {
+            max-height: 420px;
+            overflow-y: auto;
+            padding: 0 4px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            scroll-behavior: smooth;
+        }
+
+        .deepseek-chat-box::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .deepseek-chat-box::-webkit-scrollbar-track {
+            background: var(--input-bg);
+            border-radius: 10px;
+        }
+
+        .deepseek-chat-box::-webkit-scrollbar-thumb {
+            background: #2563eb;
+            border-radius: 10px;
+        }
+
+        .deepseek-chat-message {
+            padding: 14px 20px;
+            border-radius: 18px;
+            max-width: 80%;
+            word-break: break-word;
+            line-height: 1.7;
+            font-size: 15px;
+            animation: fadeInUp 0.3s ease forwards;
+        }
+
+        .deepseek-chat-message.user {
+            background: var(--user-msg);
+            color: #fff;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        .deepseek-chat-message.ai {
+            background: var(--ai-msg);
+            color: var(--text-primary);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        .deepseek-chat-message.ai .typing-dots {
+            display: inline-flex;
+            gap: 4px;
+            align-items: center;
+            padding: 4px 0;
+        }
+
+        .deepseek-chat-message.ai .typing-dots span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #2563eb;
+            border-radius: 50%;
+            animation: typingDot 1.4s infinite both;
+        }
+
+        .deepseek-chat-message.ai .typing-dots span:nth-child(1) { animation-delay: 0s; }
+        .deepseek-chat-message.ai .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .deepseek-chat-message.ai .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+        .deepseek-input-group {
+            display: flex;
+            gap: 12px;
+            background: var(--input-bg);
+            border-radius: 16px;
+            padding: 4px;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .deepseek-input-group:focus-within {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px var(--glow-color);
+            transform: translateY(-2px);
+        }
+
+        .deepseek-input-group textarea {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 14px 18px;
+            color: var(--text-primary);
+            font-size: 15px;
+            outline: none;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            resize: none;
+            min-height: 56px;
+            max-height: 140px;
+            line-height: 1.6;
+        }
+
+        .deepseek-input-group textarea::placeholder {
+            color: var(--text-light);
+        }
+
+        .deepseek-input-group button {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            border: none;
+            border-radius: 14px;
+            padding: 0 28px;
+            font-weight: 700;
+            color: #fff;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .deepseek-input-group button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.12), transparent);
+            transform: rotate(45deg) translateX(-100%);
+            transition: 0.6s;
+        }
+
+        .deepseek-input-group button:hover::after {
+            transform: rotate(45deg) translateX(100%);
+        }
+
+        .deepseek-input-group button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.35);
+        }
+
+        .deepseek-input-group button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .deepseek-chat-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 12px;
+        }
+
+        .deepseek-chat-actions button {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 6px 18px;
+            border-radius: 24px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .deepseek-chat-actions button:hover {
+            background: var(--input-bg);
+            color: var(--text-primary);
+            border-color: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        .deepseek-wrapper .loading {
+            display: none;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .deepseek-wrapper .loading.show {
+            display: block;
+            animation: fadeInUp 0.4s ease forwards;
+        }
+
+        .deepseek-wrapper .loading .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--border-color);
+            border-top: 4px solid #2563eb;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 12px;
+        }
+
+        .deepseek-wrapper .loading p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .deepseek-footer {
+            text-align: center;
+            padding: 16px 2rem 2rem;
+            font-size: 12px;
+            color: var(--text-light);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .deepseek-footer i {
+            color: #2563eb;
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        /* ============================================================ */
+        /* BRAT & SERTIFIKAT - Input Styling */
         /* ============================================================ */
         .brat-wrapper .header,
         .sertifikat-wrapper .header,
@@ -1434,7 +2140,7 @@
             padding: 4px;
             border: 2px solid var(--border-color);
             margin-bottom: 16px;
-            transition: border-color 0.3s, box-shadow 0.3s;
+            transition: all 0.3s ease;
         }
 
         .brat-wrapper .input-group:focus-within,
@@ -1445,6 +2151,7 @@
         .spotify-wrapper .input-group:focus-within {
             border-color: #2563eb;
             box-shadow: 0 0 0 4px var(--glow-color);
+            transform: translateY(-2px);
         }
 
         .brat-wrapper .input-group input,
@@ -1486,7 +2193,7 @@
             color: #fff;
             font-size: 14px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             font-family: 'Plus Jakarta Sans', sans-serif;
             white-space: nowrap;
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
@@ -1546,14 +2253,14 @@
             font-weight: 600;
             font-size: 13px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             font-family: 'Plus Jakarta Sans', sans-serif;
             text-align: center;
         }
 
         .brat-wrapper .mode-btn i {
             margin-right: 6px;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
 
         .brat-wrapper .mode-btn:hover {
@@ -1661,12 +2368,13 @@
             border-radius: 60px;
             padding: 4px;
             border: 2px solid var(--border-color);
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
 
         .converter-wrapper .input-wrap:focus-within {
             border-color: #2563eb;
             box-shadow: 0 0 0 4px var(--glow-color);
+            transform: translateY(-2px);
         }
 
         .converter-wrapper .input-wrap input {
@@ -1694,7 +2402,7 @@
             font-size: 14px;
             color: #fff;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -1733,7 +2441,7 @@
             display: flex;
             align-items: center;
             gap: 6px;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
 
         .converter-wrapper .status-small.success {
@@ -1796,7 +2504,7 @@
             font-weight: 600;
             text-decoration: none;
             border: 1px solid rgba(34, 197, 94, 0.2);
-            transition: 0.3s;
+            transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -1818,7 +2526,7 @@
             font-size: 13px;
             font-weight: 600;
             border: 1px solid rgba(37, 99, 235, 0.2);
-            transition: 0.3s;
+            transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -1865,7 +2573,7 @@
             color: #2563eb;
             text-decoration: none;
             font-weight: 500;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
 
         .converter-wrapper .footer-conv .credit a:hover {
@@ -1912,7 +2620,7 @@
             font-size: 13px;
             font-family: 'Plus Jakarta Sans', sans-serif;
             outline: none;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             width: 100%;
         }
 
@@ -1933,12 +2641,13 @@
             padding: 4px;
             border: 2px solid var(--border-color);
             margin-bottom: 16px;
-            transition: border-color 0.3s, box-shadow 0.3s;
+            transition: all 0.3s ease;
         }
 
         .iqc-wrapper .input-group:focus-within {
             border-color: #2563eb;
             box-shadow: 0 0 0 4px var(--glow-color);
+            transform: translateY(-2px);
         }
 
         .iqc-wrapper .input-group input {
@@ -1965,7 +2674,7 @@
             color: #fff;
             font-size: 14px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             font-family: 'Plus Jakarta Sans', sans-serif;
             white-space: nowrap;
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
@@ -2021,7 +2730,7 @@
             font-size: 13px;
             font-family: 'Plus Jakarta Sans', sans-serif;
             outline: none;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             width: 100%;
         }
 
@@ -2042,12 +2751,13 @@
             padding: 4px;
             border: 2px solid var(--border-color);
             margin-bottom: 16px;
-            transition: border-color 0.3s, box-shadow 0.3s;
+            transition: all 0.3s ease;
         }
 
         .fakedev-wrapper .input-group:focus-within {
             border-color: #2563eb;
             box-shadow: 0 0 0 4px var(--glow-color);
+            transform: translateY(-2px);
         }
 
         .fakedev-wrapper .input-group input {
@@ -2074,7 +2784,7 @@
             color: #fff;
             font-size: 14px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             font-family: 'Plus Jakarta Sans', sans-serif;
             white-space: nowrap;
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
@@ -2104,7 +2814,7 @@
         }
 
         /* ============================================================ */
-        /* FAKEDANA WRAPPER - FIXED */
+        /* FAKEDANA WRAPPER */
         /* ============================================================ */
         .fakedana-wrapper .form-group {
             display: flex;
@@ -2130,7 +2840,7 @@
             font-size: 13px;
             font-family: 'Plus Jakarta Sans', sans-serif;
             outline: none;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             width: 100%;
         }
 
@@ -2151,12 +2861,13 @@
             padding: 4px;
             border: 2px solid var(--border-color);
             margin-bottom: 16px;
-            transition: border-color 0.3s, box-shadow 0.3s;
+            transition: all 0.3s ease;
         }
 
         .fakedana-wrapper .input-group:focus-within {
             border-color: #2563eb;
             box-shadow: 0 0 0 4px var(--glow-color);
+            transform: translateY(-2px);
         }
 
         .fakedana-wrapper .input-group input {
@@ -2183,7 +2894,7 @@
             color: #fff;
             font-size: 14px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             font-family: 'Plus Jakarta Sans', sans-serif;
             white-space: nowrap;
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
@@ -2213,7 +2924,7 @@
         }
 
         /* ============================================================ */
-        /* SPOTIFY WRAPPER - FIXED */
+        /* SPOTIFY WRAPPER */
         /* ============================================================ */
         .spotify-wrapper .form-group {
             display: flex;
@@ -2239,7 +2950,7 @@
             font-size: 13px;
             font-family: 'Plus Jakarta Sans', sans-serif;
             outline: none;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             width: 100%;
         }
 
@@ -2260,12 +2971,13 @@
             padding: 4px;
             border: 2px solid var(--border-color);
             margin-bottom: 16px;
-            transition: border-color 0.3s, box-shadow 0.3s;
+            transition: all 0.3s ease;
         }
 
         .spotify-wrapper .input-group:focus-within {
             border-color: #2563eb;
             box-shadow: 0 0 0 4px var(--glow-color);
+            transform: translateY(-2px);
         }
 
         .spotify-wrapper .input-group input {
@@ -2292,7 +3004,7 @@
             color: #fff;
             font-size: 14px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             font-family: 'Plus Jakarta Sans', sans-serif;
             white-space: nowrap;
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
@@ -2369,7 +3081,7 @@
             border-radius: 12px;
             border: 1px solid var(--border-color);
             background: var(--input-bg);
-            transition: 0.4s;
+            transition: all 0.4s ease;
         }
 
         .result-container img:hover {
@@ -2389,7 +3101,7 @@
             font-weight: 700;
             font-size: 14px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             font-family: 'Plus Jakarta Sans', sans-serif;
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
             position: relative;
@@ -2518,7 +3230,7 @@
             font-size: 13px;
             font-family: 'Plus Jakarta Sans', sans-serif;
             outline: none;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             width: 100%;
         }
 
@@ -2550,7 +3262,7 @@
             font-weight: 700;
             font-size: 16px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             font-family: 'Plus Jakarta Sans', sans-serif;
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
             margin-bottom: 16px;
@@ -2586,351 +3298,6 @@
         }
 
         /* ============================================================ */
-        /* DEEPSEEK AI CHAT */
-        /* ============================================================ */
-        .deepseek-wrapper {
-            max-width: 920px;
-            width: 100%;
-            background: var(--bg-card);
-            backdrop-filter: blur(16px);
-            border-radius: 32px;
-            padding: 0;
-            border: 2px solid var(--border-color);
-            box-shadow: var(--shadow);
-            margin-top: 1.5rem;
-            animation: fadeInUp 0.6s ease forwards;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow: hidden;
-            transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .deepseek-wrapper:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-hover);
-            border-color: rgba(37, 99, 235, 0.15);
-        }
-
-        .deepseek-hero-box {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            background: linear-gradient(135deg, #0d1430 0%, #1a2a5a 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 2px solid var(--border-color);
-            cursor: pointer;
-        }
-
-        .deepseek-hero-box::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 40%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 70% 60%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
-            animation: float 10s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        .deepseek-hero-box img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.3;
-            z-index: 0;
-        }
-
-        .deepseek-hero-box .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(13, 20, 48, 0.7) 0%, rgba(26, 42, 90, 0.6) 100%);
-            z-index: 0;
-        }
-
-        .deepseek-hero-box .hero-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-        }
-
-        .deepseek-hero-box .hero-icon {
-            font-size: 4.5rem;
-            color: #60a5fa;
-            margin-bottom: 0.5rem;
-            animation: float 4s ease-in-out infinite;
-            position: relative;
-            z-index: 1;
-            filter: drop-shadow(0 0 40px rgba(37, 99, 235, 0.2));
-        }
-
-        .deepseek-hero-box .hero-title {
-            font-size: 2.4rem;
-            font-weight: 800;
-            color: #fff;
-            position: relative;
-            z-index: 1;
-            text-align: center;
-        }
-
-        .deepseek-hero-box .hero-title span {
-            background: linear-gradient(135deg, #60a5fa, #a78bfa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .deepseek-hero-box .hero-desc {
-            font-size: 1rem;
-            color: rgba(255,255,255,0.6);
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            margin-top: 4px;
-        }
-
-        .deepseek-hero-box .hero-badge-ai {
-            display: inline-block;
-            background: rgba(37, 99, 235, 0.25);
-            border: 1px solid rgba(37, 99, 235, 0.2);
-            padding: 0.2rem 1rem;
-            border-radius: 40px;
-            font-size: 0.65rem;
-            font-weight: 600;
-            color: #60a5fa;
-            letter-spacing: 0.5px;
-            position: relative;
-            z-index: 1;
-            margin-top: 0.5rem;
-        }
-
-        .deepseek-chat-area {
-            padding: 2rem 2rem 1.5rem;
-        }
-
-        .deepseek-chat-box {
-            max-height: 420px;
-            overflow-y: auto;
-            padding: 0 4px;
-            margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            scroll-behavior: smooth;
-        }
-
-        .deepseek-chat-box::-webkit-scrollbar {
-            width: 4px;
-        }
-
-        .deepseek-chat-box::-webkit-scrollbar-track {
-            background: var(--input-bg);
-            border-radius: 10px;
-        }
-
-        .deepseek-chat-box::-webkit-scrollbar-thumb {
-            background: #2563eb;
-            border-radius: 10px;
-        }
-
-        .deepseek-chat-message {
-            padding: 14px 20px;
-            border-radius: 18px;
-            max-width: 80%;
-            word-break: break-word;
-            line-height: 1.7;
-            font-size: 15px;
-            animation: fadeInUp 0.3s ease forwards;
-        }
-
-        .deepseek-chat-message.user {
-            background: var(--user-msg);
-            color: #fff;
-            align-self: flex-end;
-            border-bottom-right-radius: 4px;
-        }
-
-        .deepseek-chat-message.ai {
-            background: var(--ai-msg);
-            color: var(--text-primary);
-            align-self: flex-start;
-            border-bottom-left-radius: 4px;
-            border: 1px solid var(--border-color);
-        }
-
-        .deepseek-chat-message.ai .typing-dots {
-            display: inline-flex;
-            gap: 4px;
-            align-items: center;
-            padding: 4px 0;
-        }
-
-        .deepseek-chat-message.ai .typing-dots span {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            background: #2563eb;
-            border-radius: 50%;
-            animation: typingDot 1.4s infinite both;
-        }
-
-        .deepseek-chat-message.ai .typing-dots span:nth-child(1) { animation-delay: 0s; }
-        .deepseek-chat-message.ai .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
-        .deepseek-chat-message.ai .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
-
-        .deepseek-input-group {
-            display: flex;
-            gap: 12px;
-            background: var(--input-bg);
-            border-radius: 16px;
-            padding: 4px;
-            border: 2px solid var(--border-color);
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-
-        .deepseek-input-group:focus-within {
-            border-color: #2563eb;
-            box-shadow: 0 0 0 4px var(--glow-color);
-        }
-
-        .deepseek-input-group textarea {
-            flex: 1;
-            background: transparent;
-            border: none;
-            padding: 14px 18px;
-            color: var(--text-primary);
-            font-size: 15px;
-            outline: none;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            resize: none;
-            min-height: 56px;
-            max-height: 140px;
-            line-height: 1.6;
-        }
-
-        .deepseek-input-group textarea::placeholder {
-            color: var(--text-light);
-        }
-
-        .deepseek-input-group button {
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
-            border: none;
-            border-radius: 14px;
-            padding: 0 28px;
-            font-weight: 700;
-            color: #fff;
-            font-size: 15px;
-            cursor: pointer;
-            transition: 0.3s;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            white-space: nowrap;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .deepseek-input-group button::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.12), transparent);
-            transform: rotate(45deg) translateX(-100%);
-            transition: 0.6s;
-        }
-
-        .deepseek-input-group button:hover::after {
-            transform: rotate(45deg) translateX(100%);
-        }
-
-        .deepseek-input-group button:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.35);
-        }
-
-        .deepseek-input-group button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .deepseek-chat-actions {
-            display: flex;
-            gap: 10px;
-            justify-content: flex-end;
-            margin-top: 12px;
-        }
-
-        .deepseek-chat-actions button {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
-            padding: 6px 18px;
-            border-radius: 24px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .deepseek-chat-actions button:hover {
-            background: var(--input-bg);
-            color: var(--text-primary);
-            border-color: #2563eb;
-        }
-
-        .deepseek-wrapper .loading {
-            display: none;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        .deepseek-wrapper .loading.show {
-            display: block;
-            animation: fadeInUp 0.4s ease forwards;
-        }
-
-        .deepseek-wrapper .loading .spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid var(--border-color);
-            border-top: 4px solid #2563eb;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 12px;
-        }
-
-        .deepseek-wrapper .loading p {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        .deepseek-footer {
-            text-align: center;
-            padding: 16px 2rem 2rem;
-            font-size: 12px;
-            color: var(--text-light);
-            border-top: 1px solid var(--border-color);
-        }
-
-        .deepseek-footer i {
-            color: #2563eb;
-            animation: pulseGlow 2s ease-in-out infinite;
-        }
-
-        /* ============================================================ */
         /* ABOUT */
         /* ============================================================ */
         .about-container {
@@ -2948,7 +3315,26 @@
             max-width: 600px;
             margin: 0 auto;
             box-shadow: var(--shadow);
-            transition: 0.4s;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            position: relative;
+            overflow: hidden;
+            animation: glowPulse 4s ease-in-out infinite;
+        }
+
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 40%, rgba(37, 99, 235, 0.05) 0%, transparent 60%);
+            transition: all 0.6s ease;
+            pointer-events: none;
+        }
+
+        .about-card:hover::before {
+            transform: scale(1.5);
         }
 
         .about-card:hover {
@@ -2965,11 +3351,11 @@
             box-shadow: 0 0 60px var(--glow-color);
             margin-bottom: 1.2rem;
             animation: float 4s ease-in-out infinite;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
 
         .about-avatar:hover {
-            transform: scale(1.05);
+            transform: scale(1.05) rotate(-5deg);
         }
 
         .about-name {
@@ -3015,7 +3401,7 @@
             font-size: 1rem;
             color: #fff;
             cursor: pointer;
-            transition: 0.4s;
+            transition: all 0.4s ease;
             text-decoration: none;
             box-shadow: 0 8px 30px rgba(37, 99, 235, 0.3);
             margin-bottom: 2rem;
@@ -3046,6 +3432,11 @@
 
         .about-download-btn i {
             font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .about-download-btn:hover i {
+            animation: float 2s ease-in-out infinite;
         }
 
         .about-download-btn .badge-android {
@@ -3072,7 +3463,7 @@
             font-weight: 700;
             font-size: 0.95rem;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -3120,6 +3511,11 @@
 
         .about-btn i {
             font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .about-btn:hover i {
+            animation: float 2s ease-in-out infinite;
         }
 
         .about-social-hero {
@@ -3129,10 +3525,28 @@
             border-radius: 24px;
             border: 1px solid var(--border-color);
             text-align: center;
-            transition: 0.3s;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-social-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 40%, rgba(37, 99, 235, 0.05) 0%, transparent 60%);
+            transition: all 0.6s ease;
+            pointer-events: none;
+        }
+
+        .about-social-hero:hover::before {
+            transform: scale(1.5);
         }
 
         .about-social-hero:hover {
@@ -3199,7 +3613,7 @@
 
         .socials a {
             color: var(--text-light);
-            transition: 0.3s;
+            transition: all 0.3s ease;
             display: inline-block;
         }
 
@@ -3214,7 +3628,7 @@
         @media (max-width: 700px) {
             .header-top {
                 flex-wrap: wrap;
-                padding: 1rem;
+                padding: 0.8rem 1rem;
                 gap: 0.8rem;
             }
             .logo-wrapper {
@@ -3222,34 +3636,41 @@
                 min-width: 0;
             }
             .logo-icon {
-                width: 44px;
-                height: 44px;
-                font-size: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
             }
             .logo-text .brand-name {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
             }
             .header-right {
                 margin-left: 0;
                 width: 100%;
                 justify-content: flex-start;
-                gap: 0.8rem;
+                gap: 0.6rem;
                 flex-wrap: wrap;
             }
-            .header-nav {
-                gap: 1rem;
+            .nav-modern {
+                width: 100%;
+                justify-content: center;
+                padding: 0.2rem;
+                gap: 0.2rem;
             }
-            .header-nav a {
-                font-size: 0.8rem;
+            .nav-modern a {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.8rem;
+            }
+            .nav-modern a i {
+                font-size: 0.7rem;
             }
             .download-info {
-                font-size: 0.6rem;
-                padding: 3px 10px;
+                font-size: 0.55rem;
+                padding: 0.3rem 0.8rem;
             }
             .theme-toggle {
-                width: 38px;
-                height: 38px;
-                font-size: 1rem;
+                width: 36px;
+                height: 36px;
+                font-size: 0.9rem;
             }
 
             .search-wrapper {
@@ -3290,14 +3711,6 @@
             }
             .hero-pricing .features-grid {
                 grid-template-columns: 1fr 1fr;
-            }
-
-            .category-tabs {
-                gap: 0.8rem;
-            }
-            .category-tab {
-                padding: 0.6rem 1.5rem;
-                font-size: 0.85rem;
             }
 
             .brat-wrapper,
@@ -3457,7 +3870,6 @@
                 padding: 1px 8px;
             }
 
-            /* LOADING RESPONSIVE */
             .loading-container {
                 width: 95%;
             }
@@ -3486,13 +3898,10 @@
             .hero-pricing .features-grid {
                 grid-template-columns: 1fr;
             }
-            .category-tabs {
-                flex-direction: column;
-                width: 100%;
-            }
-            .category-tab {
-                justify-content: center;
-                width: 100%;
+            .brat-wrapper,
+            .sertifikat-wrapper,
+            .ektp-wrapper {
+                padding: 18px 14px;
             }
             .converter-wrapper {
                 padding: 18px 14px;
@@ -3591,7 +4000,31 @@
 <body>
 
     <!-- ============================================================ -->
-    <!-- LOADING SCREEN (20 DETIK) -->
+    <!-- BACKGROUND PARTICLES & ORBS -->
+    <!-- ============================================================ -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+
+    <!-- ============================================================ -->
+    <!-- LOADING SCREEN -->
     <!-- ============================================================ -->
     <div id="loadingScreen">
         <div class="loading-container">
@@ -3682,7 +4115,7 @@
     <!-- MAIN CONTENT -->
     <!-- ============================================================ -->
     <div class="container" id="mainContent" style="display:none;">
-        <!-- HEADER -->
+        <!-- HEADER - MODERN NAVIGATION -->
         <header class="header-top">
             <div class="logo-wrapper">
                 <div class="logo-icon">
@@ -3694,28 +4127,37 @@
                 </div>
             </div>
             <div class="header-right">
-                <nav class="header-nav">
-                    <a href="#" class="active" id="navHome">Home</a>
-                    <a href="#" id="navTools">Tools</a>
-                    <a href="#" id="navAbout">About</a>
+                <nav class="nav-modern">
+                    <a href="#" class="active" id="navHome">
+                        <i class="fas fa-home"></i> Home
+                        <span class="nav-indicator"></span>
+                    </a>
+                    <a href="#" id="navTools">
+                        <i class="fas fa-tools"></i> Tools
+                        <span class="nav-indicator"></span>
+                    </a>
+                    <a href="#" id="navAbout">
+                        <i class="fas fa-user"></i> About
+                        <span class="nav-indicator"></span>
+                    </a>
                 </nav>
-                <span class="download-info">
-                    <i class="fas fa-download"></i> Download Versi Aplikasi Di About
+                <span class="download-info" onclick="document.getElementById('navAbout').click()">
+                    <i class="fas fa-download"></i> Download APK
                 </span>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon" id="themeIcon"></i>
+                    <i class="fas fa-sun" id="themeIcon"></i>
                 </button>
             </div>
         </header>
 
-        <!-- SEARCH BAR -->
+        <!-- SEARCH BAR (hanya muncul di halaman Tools) -->
         <div class="search-wrapper" id="searchWrapper">
             <i class="fas fa-search"></i>
             <input type="text" id="searchInput" placeholder="Cari tools..." />
             <span class="search-shortcut">⌘K</span>
         </div>
 
-        <!-- HERO UTAMA -->
+        <!-- HERO UTAMA (Home) -->
         <section class="hero-main" id="heroSection">
             <span class="badge"><i class="fas fa-bolt"></i> Free Tools • 2026</span>
             <h1>
@@ -3733,8 +4175,8 @@
             </button>
         </section>
 
-        <!-- HERO TOOLS CARD -->
-        <section class="hero-tools-section" id="heroToolsSection">
+        <!-- HERO TOOLS CARD - HOME (TIDAK BISA DI KLIK) -->
+        <section class="hero-tools-section" id="heroToolsSectionHome">
             <div class="section-label"><i class="fas fa-grid-2"></i> Tools</div>
             <h2>Pilih Tools Favoritmu</h2>
             <div class="hero-tools-grid">
@@ -3786,6 +4228,83 @@
                     <p>Download lagu dari Spotify dengan mudah.</p>
                     <span class="badge-tool">🎵 Download MP3</span>
                 </div>
+                <div class="hero-tool-card">
+                    <div class="icon"><i class="fas fa-brain"></i></div>
+                    <h3>Elysian AI Chat</h3>
+                    <p>Tanya apapun, dapatkan jawaban instan dari AI.</p>
+                    <span class="badge-tool">🤖 AI Powered</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- HERO TOOLS CARD - TOOLS PAGE (BISA DI KLIK) -->
+        <section class="hero-tools-section hero-tools-section-tools" id="heroToolsSectionTools" style="display:none;">
+            <div class="section-label"><i class="fas fa-grid-2"></i> Tools</div>
+            <h2>Klik Hero Box untuk Membuka Fitur</h2>
+            <div class="hero-tools-grid">
+                <div class="hero-tool-card" data-tool="brat">
+                    <div class="icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+                    <h3>BRAT Generator</h3>
+                    <p>Ubah teks biasa jadi stylish dengan berbagai gaya keren.</p>
+                    <span class="badge-tool">✨ 15+ Style</span>
+                    <div class="click-hint"><i class="fas fa-hand-pointer"></i> Klik untuk buka</div>
+                </div>
+                <div class="hero-tool-card" data-tool="convert">
+                    <div class="icon"><i class="fas fa-download"></i></div>
+                    <h3>YouTube Converter</h3>
+                    <p>Konversi video YouTube ke MP3 dengan cepat & mudah.</p>
+                    <span class="badge-tool">🎵 Audio 320kbps</span>
+                    <div class="click-hint"><i class="fas fa-hand-pointer"></i> Klik untuk buka</div>
+                </div>
+                <div class="hero-tool-card" data-tool="sertifikat">
+                    <div class="icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Sertifikat Tolol</h3>
+                    <p>Buat sertifikat lucu untuk teman-temanmu dengan custom nama.</p>
+                    <span class="badge-tool">📜 Custom Nama</span>
+                    <div class="click-hint"><i class="fas fa-hand-pointer"></i> Klik untuk buka</div>
+                </div>
+                <div class="hero-tool-card" data-tool="ektp">
+                    <div class="icon"><i class="fas fa-id-card"></i></div>
+                    <h3>E-KTP Generator</h3>
+                    <p>Buat KTP elektronik custom dengan data diri kamu.</p>
+                    <span class="badge-tool">🪪 Full Custom</span>
+                    <div class="click-hint"><i class="fas fa-hand-pointer"></i> Klik untuk buka</div>
+                </div>
+                <div class="hero-tool-card" data-tool="iqc">
+                    <div class="icon"><i class="fas fa-quote-right"></i></div>
+                    <h3>IQC Generator</h3>
+                    <p>Buat quote image keren dengan teks & waktu custom.</p>
+                    <span class="badge-tool">💬 Image Quote</span>
+                    <div class="click-hint"><i class="fas fa-hand-pointer"></i> Klik untuk buka</div>
+                </div>
+                <div class="hero-tool-card" data-tool="fakedev">
+                    <div class="icon"><i class="fas fa-user-tie"></i></div>
+                    <h3>FakeDev Profile</h3>
+                    <p>Buat profil developer palsu dengan nama & bio custom.</p>
+                    <span class="badge-tool">👨‍💻 Fake Profile</span>
+                    <div class="click-hint"><i class="fas fa-hand-pointer"></i> Klik untuk buka</div>
+                </div>
+                <div class="hero-tool-card" data-tool="fakedana">
+                    <div class="icon"><i class="fas fa-wallet"></i></div>
+                    <h3>Fake Dana</h3>
+                    <p>Buat saldo dana palsu dengan amount custom.</p>
+                    <span class="badge-tool">💰 Fake Saldo</span>
+                    <div class="click-hint"><i class="fas fa-hand-pointer"></i> Klik untuk buka</div>
+                </div>
+                <div class="hero-tool-card" data-tool="spotify">
+                    <div class="icon"><i class="fas fa-music"></i></div>
+                    <h3>Spotify Downloader</h3>
+                    <p>Download lagu dari Spotify dengan mudah.</p>
+                    <span class="badge-tool">🎵 Download MP3</span>
+                    <div class="click-hint"><i class="fas fa-hand-pointer"></i> Klik untuk buka</div>
+                </div>
+                <div class="hero-tool-card" data-tool="deepseek">
+                    <div class="icon"><i class="fas fa-brain"></i></div>
+                    <h3>Elysian AI Chat</h3>
+                    <p>Tanya apapun, dapatkan jawaban instan dari AI.</p>
+                    <span class="badge-tool">🤖 AI Powered</span>
+                    <div class="click-hint"><i class="fas fa-hand-pointer"></i> Klik untuk buka</div>
+                </div>
             </div>
         </section>
 
@@ -3807,38 +4326,17 @@
             </button>
         </section>
 
-        <!-- KATEGORI -->
-        <div id="category-section">
-            <div class="category-tabs">
-                <button class="category-tab" data-category="brat">
-                    <i class="fas fa-wand-magic-sparkles"></i> BRAT
-                </button>
-                <button class="category-tab" data-category="convert">
-                    <i class="fas fa-download"></i> CONVERT
-                </button>
-                <button class="category-tab" data-category="sertifikat">
-                    <i class="fas fa-certificate"></i> SERTIFIKAT
-                </button>
-                <button class="category-tab" data-category="ektp">
-                    <i class="fas fa-id-card"></i> E-KTP
-                </button>
-                <button class="category-tab" data-category="iqc">
-                    <i class="fas fa-quote-right"></i> IQC
-                </button>
-                <button class="category-tab" data-category="fakedev">
-                    <i class="fas fa-user-tie"></i> FAKEDEV
-                </button>
-                <button class="category-tab" data-category="fakedana">
-                    <i class="fas fa-wallet"></i> FAKE DANA
-                </button>
-                <button class="category-tab" data-category="spotify">
-                    <i class="fas fa-music"></i> SPOTIFY
-                </button>
-                <button class="category-tab" data-category="deepseek">
-                    <i class="fas fa-brain"></i> Elysian AI
-                </button>
-            </div>
-            <div id="content-wrapper"></div>
+        <!-- TOOLS WRAPPER -->
+        <div id="toolsWrapper">
+            <div class="brat-wrapper" id="tool-brat"></div>
+            <div class="converter-wrapper" id="tool-convert"></div>
+            <div class="sertifikat-wrapper" id="tool-sertifikat"></div>
+            <div class="ektp-wrapper" id="tool-ektp"></div>
+            <div class="iqc-wrapper" id="tool-iqc"></div>
+            <div class="fakedev-wrapper" id="tool-fakedev"></div>
+            <div class="fakedana-wrapper" id="tool-fakedana"></div>
+            <div class="spotify-wrapper" id="tool-spotify"></div>
+            <div class="deepseek-wrapper" id="tool-deepseek"></div>
         </div>
 
         <!-- ABOUT -->
@@ -3987,117 +4485,78 @@
         });
 
         // ============================================================
-        // DATA KATEGORI
-        // ============================================================
-        const categories = {
-            brat: { icon: 'fa-wand-magic-sparkles', title: 'BRAT - Generator Teks Stylish' },
-            convert: { icon: 'fa-download', title: 'YouTube to MP3 Converter' },
-            sertifikat: { icon: 'fa-certificate', title: 'Sertifikat Tolol' },
-            ektp: { icon: 'fa-id-card', title: 'E-KTP Generator' },
-            iqc: { icon: 'fa-quote-right', title: 'IQC - Image Quote Creator' },
-            fakedev: { icon: 'fa-user-tie', title: 'FakeDev - Fake Developer Profile' },
-            fakedana: { icon: 'fa-wallet', title: 'Fake Dana - Saldo Palsu' },
-            spotify: { icon: 'fa-music', title: 'Spotify Downloader' },
-            deepseek: { icon: 'fa-brain', title: 'Elysian AI Chat' }
-        };
-
-        // ============================================================
-        // DOM ELEMENTS & NAVIGASI
+        // DOM ELEMENTS
         // ============================================================
         const heroSection = document.getElementById('heroSection');
-        const heroToolsSection = document.getElementById('heroToolsSection');
+        const heroToolsSectionHome = document.getElementById('heroToolsSectionHome');
+        const heroToolsSectionTools = document.getElementById('heroToolsSectionTools');
         const heroPricing = document.querySelector('.hero-pricing');
         const searchWrapper = document.getElementById('searchWrapper');
-        const categorySection = document.getElementById('category-section');
         const aboutSection = document.getElementById('aboutSection');
         const navHome = document.getElementById('navHome');
         const navTools = document.getElementById('navTools');
         const navAbout = document.getElementById('navAbout');
         const btnStart = document.getElementById('btnStart');
         const btnStartFree = document.getElementById('btnStartFree');
-        const wrapper = document.getElementById('content-wrapper');
-        const tabs = document.querySelectorAll('.category-tab');
         const searchInput = document.getElementById('searchInput');
 
-        function showHome() {
-            heroSection.style.display = 'flex';
-            heroToolsSection.style.display = 'block';
-            heroPricing.style.display = 'block';
-            searchWrapper.classList.remove('visible');
-            categorySection.classList.remove('visible');
-            aboutSection.style.display = 'none';
-            navHome.classList.add('active');
-            navTools.classList.remove('active');
-            navAbout.classList.remove('active');
-            wrapper.innerHTML = '';
-            tabs.forEach(t => t.classList.remove('active'));
-        }
+        // Tool cards di halaman Tools (bisa di klik)
+        const toolCards = document.querySelectorAll('#heroToolsSectionTools .hero-tool-card');
+        const toolWrappers = {
+            brat: document.getElementById('tool-brat'),
+            convert: document.getElementById('tool-convert'),
+            sertifikat: document.getElementById('tool-sertifikat'),
+            ektp: document.getElementById('tool-ektp'),
+            iqc: document.getElementById('tool-iqc'),
+            fakedev: document.getElementById('tool-fakedev'),
+            fakedana: document.getElementById('tool-fakedana'),
+            spotify: document.getElementById('tool-spotify'),
+            deepseek: document.getElementById('tool-deepseek')
+        };
 
-        function showTools() {
-            heroSection.style.display = 'none';
-            heroToolsSection.style.display = 'none';
-            heroPricing.style.display = 'none';
-            searchWrapper.classList.add('visible');
-            categorySection.classList.add('visible');
-            aboutSection.style.display = 'none';
-            navTools.classList.add('active');
-            navHome.classList.remove('active');
-            navAbout.classList.remove('active');
-            if (!wrapper.innerHTML) renderCategory('brat', false);
-        }
-
-        function showAbout() {
-            heroSection.style.display = 'none';
-            heroToolsSection.style.display = 'none';
-            heroPricing.style.display = 'none';
-            searchWrapper.classList.remove('visible');
-            categorySection.classList.remove('visible');
-            aboutSection.style.display = 'block';
-            navAbout.classList.add('active');
-            navHome.classList.remove('active');
-            navTools.classList.remove('active');
-            wrapper.innerHTML = '';
-            tabs.forEach(t => t.classList.remove('active'));
-        }
+        // Hide all tool wrappers initially
+        Object.values(toolWrappers).forEach(w => {
+            if (w) w.classList.remove('show');
+        });
 
         // ============================================================
-        // BRAT GENERATOR (sama seperti sebelumnya, dipotong agar tidak terlalu panjang)
+        // RENDER FUNCTIONS FOR EACH TOOL
         // ============================================================
+
+        // BRAT Generator
+        function renderBratGenerator() {
+            return `
+                <div class="header">
+                    <div class="icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+                    <h1>Elysian Generator</h1>
+                    <p>Buat & download gambar/gif BRAT langsung!</p>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="bratTextInput" placeholder="Masukkan teks...">
+                    <button id="bratGenerateBtn"><i class="fas fa-wand-magic-sparkles"></i> Generate</button>
+                </div>
+                <div class="mode-buttons">
+                    <button class="mode-btn active" id="bratStaticBtn" data-mode="static">
+                        <i class="fas fa-image"></i> Static <span class="badge">PNG</span>
+                    </button>
+                    <button class="mode-btn" id="bratAnimatedBtn" data-mode="animated">
+                        <i class="fas fa-film"></i> Animated <span class="badge">GIF</span>
+                    </button>
+                </div>
+                <div class="loading" id="bratLoading"><div class="spinner"></div><p id="bratLoadingText">⏳ Generating...</p></div>
+                <div class="error" id="bratError"></div>
+                <div class="result-container" id="bratResultContainer">
+                    <img src="" alt="BRAT Image" id="bratResultImage">
+                    <button class="download-btn" id="bratDownloadBtn"><i class="fas fa-download"></i> Download</button>
+                    <div class="info"><i class="fas fa-info-circle"></i> <span id="bratInfoText">Generate dulu ya!</span></div>
+                </div>
+                <div class="footer-brat">Made with <i class="fas fa-heart"></i> by ZIZI ELYSIAN</div>
+            `;
+        }
+
         let currentMode = 'static';
         let currentImageUrl = '';
         let currentFilename = '';
-
-        function renderBratGenerator() {
-            return `
-                <div class="brat-wrapper">
-                    <div class="header">
-                        <div class="icon"><i class="fas fa-wand-magic-sparkles"></i></div>
-                        <h1>Elysian Generator</h1>
-                        <p>Buat & download gambar/gif BRAT langsung!</p>
-                    </div>
-                    <div class="input-group">
-                        <input type="text" id="bratTextInput" placeholder="Masukkan teks..." value="">
-                        <button id="bratGenerateBtn"><i class="fas fa-wand-magic-sparkles"></i> Generate</button>
-                    </div>
-                    <div class="mode-buttons">
-                        <button class="mode-btn active" id="bratStaticBtn" data-mode="static">
-                            <i class="fas fa-image"></i> Static <span class="badge">PNG</span>
-                        </button>
-                        <button class="mode-btn" id="bratAnimatedBtn" data-mode="animated">
-                            <i class="fas fa-film"></i> Animated <span class="badge">GIF</span>
-                        </button>
-                    </div>
-                    <div class="loading" id="bratLoading"><div class="spinner"></div><p id="bratLoadingText">⏳ Generating...</p></div>
-                    <div class="error" id="bratError"></div>
-                    <div class="result-container" id="bratResultContainer">
-                        <img src="" alt="BRAT Image" id="bratResultImage">
-                        <button class="download-btn" id="bratDownloadBtn"><i class="fas fa-download"></i> Download</button>
-                        <div class="info"><i class="fas fa-info-circle"></i> <span id="bratInfoText">Generate dulu ya!</span></div>
-                    </div>
-                    <div class="footer-brat">Made with <i class="fas fa-heart"></i> by ZIZI ELYSIAN</div>
-                </div>
-            `;
-        }
 
         function initBratGenerator() {
             const textInput = document.getElementById('bratTextInput');
@@ -4202,37 +4661,33 @@
             });
         }
 
-        // ============================================================
-        // CONVERTER (rapidapi)
-        // ============================================================
+        // CONVERTER
         function renderConverter() {
             return `
-                <div class="converter-wrapper">
-                    <div class="header-conv">
-                        <div class="brand-conv">
-                            <div class="brand-icon"><i class="fas fa-bolt"></i></div>
-                            <h1>Elysian <span>Converter</span></h1>
-                        </div>
-                        <div class="sub-desc"><i class="fas fa-circle-check"></i> Konversi video YouTube ke MP3 dengan cepat &amp; elegan.</div>
+                <div class="header-conv">
+                    <div class="brand-conv">
+                        <div class="brand-icon"><i class="fas fa-bolt"></i></div>
+                        <h1>Elysian <span>Converter</span></h1>
                     </div>
-                    <div class="converter-area">
-                        <div class="input-wrap">
-                            <input type="text" id="urlInput" placeholder="https://youtube.com/watch?v=..." value="" />
-                            <button id="convertBtn"><i class="fas fa-arrow-right-to-bracket"></i> Convert</button>
-                        </div>
-                        <div class="status-small" id="statusSmall"><i class="fas fa-circle-info"></i> Siap konversi</div>
-                        <div class="result-mini" id="resultMini">
-                            <span class="song" id="songTitle"><i class="fas fa-headphones"></i> <span id="songName">Judul lagu</span></span>
-                            <div class="actions">
-                                <a href="#" class="dl-btn" id="downloadBtn" download><i class="fas fa-download"></i> Download</a>
-                                <button class="copy-btn" id="copyLinkBtn"><i class="fas fa-copy"></i> Salin Link</button>
-                            </div>
+                    <div class="sub-desc"><i class="fas fa-circle-check"></i> Konversi video YouTube ke MP3 dengan cepat &amp; elegan.</div>
+                </div>
+                <div class="converter-area">
+                    <div class="input-wrap">
+                        <input type="text" id="urlInput" placeholder="https://youtube.com/watch?v=...">
+                        <button id="convertBtn"><i class="fas fa-arrow-right-to-bracket"></i> Convert</button>
+                    </div>
+                    <div class="status-small" id="statusSmall"><i class="fas fa-circle-info"></i> Siap konversi</div>
+                    <div class="result-mini" id="resultMini">
+                        <span class="song" id="songTitle"><i class="fas fa-headphones"></i> <span id="songName">Judul lagu</span></span>
+                        <div class="actions">
+                            <a href="#" class="dl-btn" id="downloadBtn" download><i class="fas fa-download"></i> Download</a>
+                            <button class="copy-btn" id="copyLinkBtn"><i class="fas fa-copy"></i> Salin Link</button>
                         </div>
                     </div>
-                    <div class="footer-conv">
-                        <div class="credit"><i class="fas fa-crown"></i> Made by <a href="#">Zizi</a> &bull; Elysian</div>
-                        <div class="badge"><span><i class="fas fa-cloud"></i> API Private</span><span><i class="fas fa-bolt"></i> Real-time</span></div>
-                    </div>
+                </div>
+                <div class="footer-conv">
+                    <div class="credit"><i class="fas fa-crown"></i> Made by <a href="#">Zizi</a> &bull; Elysian</div>
+                    <div class="badge"><span><i class="fas fa-cloud"></i> API Private</span><span><i class="fas fa-bolt"></i> Real-time</span></div>
                 </div>
             `;
         }
@@ -4347,30 +4802,26 @@
             setStatus('<i class="fas fa-circle-info"></i> Siap konversi', '');
         }
 
-        // ============================================================
-        // SERTIFIKAT GENERATOR
-        // ============================================================
+        // SERTIFIKAT
         function renderSertifikatGenerator() {
             return `
-                <div class="sertifikat-wrapper">
-                    <div class="header">
-                        <div class="icon"><i class="fas fa-certificate"></i></div>
-                        <h1>Sertifikat Tolol</h1>
-                        <p>Buat sertifikat tolol untuk teman-temanmu!</p>
-                    </div>
-                    <div class="input-group">
-                        <input type="text" id="sertifikatTextInput" placeholder="Masukkan nama..." value="">
-                        <button id="sertifikatGenerateBtn"><i class="fas fa-certificate"></i> Generate</button>
-                    </div>
-                    <div class="loading" id="sertifikatLoading"><div class="spinner"></div><p id="sertifikatLoadingText">⏳ Generating...</p></div>
-                    <div class="error" id="sertifikatError"></div>
-                    <div class="result-container" id="sertifikatResultContainer">
-                        <img src="" alt="Sertifikat Image" id="sertifikatResultImage">
-                        <button class="download-btn" id="sertifikatDownloadBtn"><i class="fas fa-download"></i> Download</button>
-                        <div class="info"><i class="fas fa-info-circle"></i> <span id="sertifikatInfoText">Generate dulu ya!</span></div>
-                    </div>
-                    <div class="footer-sertifikat">Made with <i class="fas fa-heart"></i> by ZIZI ELYSIAN</div>
+                <div class="header">
+                    <div class="icon"><i class="fas fa-certificate"></i></div>
+                    <h1>Sertifikat Tolol</h1>
+                    <p>Buat sertifikat tolol untuk teman-temanmu!</p>
                 </div>
+                <div class="input-group">
+                    <input type="text" id="sertifikatTextInput" placeholder="Masukkan nama...">
+                    <button id="sertifikatGenerateBtn"><i class="fas fa-certificate"></i> Generate</button>
+                </div>
+                <div class="loading" id="sertifikatLoading"><div class="spinner"></div><p id="sertifikatLoadingText">⏳ Generating...</p></div>
+                <div class="error" id="sertifikatError"></div>
+                <div class="result-container" id="sertifikatResultContainer">
+                    <img src="" alt="Sertifikat Image" id="sertifikatResultImage">
+                    <button class="download-btn" id="sertifikatDownloadBtn"><i class="fas fa-download"></i> Download</button>
+                    <div class="info"><i class="fas fa-info-circle"></i> <span id="sertifikatInfoText">Generate dulu ya!</span></div>
+                </div>
+                <div class="footer-sertifikat">Made with <i class="fas fa-heart"></i> by ZIZI ELYSIAN</div>
             `;
         }
 
@@ -4456,47 +4907,43 @@
             });
         }
 
-        // ============================================================
-        // E-KTP GENERATOR (sama seperti sebelumnya)
-        // ============================================================
+        // E-KTP
         function renderEktpGenerator() {
             return `
-                <div class="ektp-wrapper">
-                    <div class="header">
-                        <div class="icon"><i class="fas fa-id-card"></i></div>
-                        <h1>E-KTP Generator</h1>
-                        <p>Buat KTP elektronik custom dengan data diri kamu!</p>
-                    </div>
-                    <div class="form-grid">
-                        <div class="form-group"><label>Provinsi</label><input type="text" id="ektpProvinsi" value="JAWA BARAT"></div>
-                        <div class="form-group"><label>Kota/Kabupaten</label><input type="text" id="ektpKota" value="BANDUNG"></div>
-                        <div class="form-group"><label>NIK</label><input type="text" id="ektpNik" value="1234567890123456"></div>
-                        <div class="form-group"><label>Nama</label><input type="text" id="ektpNama" value="John Doe"></div>
-                        <div class="form-group"><label>Tempat, Tgl Lahir</label><input type="text" id="ektpTtl" value="Bandung, 01-01-1990"></div>
-                        <div class="form-group"><label>Jenis Kelamin</label><select id="ektpJk"><option value="Laki-laki">Laki-laki</option><option value="Perempuan">Perempuan</option></select></div>
-                        <div class="form-group"><label>Golongan Darah</label><select id="ektpGoldar"><option value="A">A</option><option value="B">B</option><option value="AB">AB</option><option value="O" selected>O</option></select></div>
-                        <div class="form-group"><label>Agama</label><select id="ektpAgama"><option value="Islam">Islam</option><option value="Kristen">Kristen</option><option value="Katolik">Katolik</option><option value="Hindu">Hindu</option><option value="Buddha">Buddha</option><option value="Konghucu">Konghucu</option></select></div>
-                        <div class="form-group"><label>Status Perkawinan</label><select id="ektpStatus"><option value="Belum Kawin">Belum Kawin</option><option value="Kawin">Kawin</option><option value="Cerai Hidup">Cerai Hidup</option><option value="Cerai Mati">Cerai Mati</option></select></div>
-                        <div class="form-group"><label>Pekerjaan</label><input type="text" id="ektpPekerjaan" value="Pegawai Swasta"></div>
-                        <div class="form-group"><label>Kewarganegaraan</label><select id="ektpWarga"><option value="WNI">WNI</option><option value="WNA">WNA</option></select></div>
-                        <div class="form-group"><label>Masa Berlaku</label><select id="ektpBerlaku"><option value="Seumur Hidup">Seumur Hidup</option><option value="5 Tahun">5 Tahun</option><option value="10 Tahun">10 Tahun</option></select></div>
-                        <div class="form-group full"><label>Alamat</label><input type="text" id="ektpAlamat" value="Jl. Contoh No. 123"></div>
-                        <div class="form-group"><label>RT/RW</label><input type="text" id="ektpRtRw" value="001/002"></div>
-                        <div class="form-group"><label>Kelurahan/Desa</label><input type="text" id="ektpKel" value="Sukajadi"></div>
-                        <div class="form-group"><label>Kecamatan</label><input type="text" id="ektpKec" value="Sukajadi"></div>
-                        <div class="form-group"><label>Terbuat Tanggal</label><input type="text" id="ektpTerbuat" value="01-01-2023"></div>
-                        <div class="form-group full"><label>URL Foto (opsional)</label><input type="text" id="ektpFoto" value="https://i.pinimg.com/736x/0b/9f/0a/0b9f0a92a598e6c22629004c1027d23f.jpg"></div>
-                    </div>
-                    <button class="btn-generate" id="ektpGenerateBtn"><i class="fas fa-id-card"></i> Generate E-KTP</button>
-                    <div class="loading" id="ektpLoading"><div class="spinner"></div><p id="ektpLoadingText">⏳ Generating E-KTP...</p></div>
-                    <div class="error" id="ektpError"></div>
-                    <div class="result-container" id="ektpResultContainer">
-                        <img src="" alt="E-KTP Image" id="ektpResultImage">
-                        <button class="download-btn" id="ektpDownloadBtn"><i class="fas fa-download"></i> Download</button>
-                        <div class="info"><i class="fas fa-info-circle"></i> <span id="ektpInfoText">Generate dulu ya!</span></div>
-                    </div>
-                    <div class="footer-ektp">Made with <i class="fas fa-heart"></i> by ZIZI ELYSIAN</div>
+                <div class="header">
+                    <div class="icon"><i class="fas fa-id-card"></i></div>
+                    <h1>E-KTP Generator</h1>
+                    <p>Buat KTP elektronik custom dengan data diri kamu!</p>
                 </div>
+                <div class="form-grid">
+                    <div class="form-group"><label>Provinsi</label><input type="text" id="ektpProvinsi" placeholder="JAWA BARAT"></div>
+                    <div class="form-group"><label>Kota/Kabupaten</label><input type="text" id="ektpKota" placeholder="BANDUNG"></div>
+                    <div class="form-group"><label>NIK</label><input type="text" id="ektpNik" placeholder="1234567890123456"></div>
+                    <div class="form-group"><label>Nama</label><input type="text" id="ektpNama" placeholder="John Doe"></div>
+                    <div class="form-group"><label>Tempat, Tgl Lahir</label><input type="text" id="ektpTtl" placeholder="Bandung, 01-01-1990"></div>
+                    <div class="form-group"><label>Jenis Kelamin</label><select id="ektpJk"><option value="Laki-laki">Laki-laki</option><option value="Perempuan">Perempuan</option></select></div>
+                    <div class="form-group"><label>Golongan Darah</label><select id="ektpGoldar"><option value="A">A</option><option value="B">B</option><option value="AB">AB</option><option value="O" selected>O</option></select></div>
+                    <div class="form-group"><label>Agama</label><select id="ektpAgama"><option value="Islam">Islam</option><option value="Kristen">Kristen</option><option value="Katolik">Katolik</option><option value="Hindu">Hindu</option><option value="Buddha">Buddha</option><option value="Konghucu">Konghucu</option></select></div>
+                    <div class="form-group"><label>Status Perkawinan</label><select id="ektpStatus"><option value="Belum Kawin">Belum Kawin</option><option value="Kawin">Kawin</option><option value="Cerai Hidup">Cerai Hidup</option><option value="Cerai Mati">Cerai Mati</option></select></div>
+                    <div class="form-group"><label>Pekerjaan</label><input type="text" id="ektpPekerjaan" placeholder="Pegawai Swasta"></div>
+                    <div class="form-group"><label>Kewarganegaraan</label><select id="ektpWarga"><option value="WNI">WNI</option><option value="WNA">WNA</option></select></div>
+                    <div class="form-group"><label>Masa Berlaku</label><select id="ektpBerlaku"><option value="Seumur Hidup">Seumur Hidup</option><option value="5 Tahun">5 Tahun</option><option value="10 Tahun">10 Tahun</option></select></div>
+                    <div class="form-group full"><label>Alamat</label><input type="text" id="ektpAlamat" placeholder="Jl. Contoh No. 123"></div>
+                    <div class="form-group"><label>RT/RW</label><input type="text" id="ektpRtRw" placeholder="001/002"></div>
+                    <div class="form-group"><label>Kelurahan/Desa</label><input type="text" id="ektpKel" placeholder="Sukajadi"></div>
+                    <div class="form-group"><label>Kecamatan</label><input type="text" id="ektpKec" placeholder="Sukajadi"></div>
+                    <div class="form-group"><label>Terbuat Tanggal</label><input type="text" id="ektpTerbuat" placeholder="01-01-2023"></div>
+                    <div class="form-group full"><label>URL Foto (opsional)</label><input type="text" id="ektpFoto" placeholder="https://..."></div>
+                </div>
+                <button class="btn-generate" id="ektpGenerateBtn"><i class="fas fa-id-card"></i> Generate E-KTP</button>
+                <div class="loading" id="ektpLoading"><div class="spinner"></div><p id="ektpLoadingText">⏳ Generating E-KTP...</p></div>
+                <div class="error" id="ektpError"></div>
+                <div class="result-container" id="ektpResultContainer">
+                    <img src="" alt="E-KTP Image" id="ektpResultImage">
+                    <button class="download-btn" id="ektpDownloadBtn"><i class="fas fa-download"></i> Download</button>
+                    <div class="info"><i class="fas fa-info-circle"></i> <span id="ektpInfoText">Generate dulu ya!</span></div>
+                </div>
+                <div class="footer-ektp">Made with <i class="fas fa-heart"></i> by ZIZI ELYSIAN</div>
             `;
         }
 
@@ -4601,41 +5048,37 @@
             generateBtn.addEventListener('click', generateEktp);
         }
 
-        // ============================================================
-        // IQC GENERATOR (Image Quote Creator)
-        // ============================================================
+        // IQC
         function renderIqcGenerator() {
             return `
-                <div class="iqc-wrapper">
-                    <div class="header">
-                        <div class="icon"><i class="fas fa-quote-right"></i></div>
-                        <h1>IQC - Image Quote Creator</h1>
-                        <p>Buat quote image keren dengan teks & waktu custom!</p>
-                    </div>
-                    <div class="form-group">
-                        <label>Text Quote</label>
-                        <input type="text" id="iqcText" placeholder="Masukkan teks quote..." value="Hidup adalah perjalanan">
-                    </div>
-                    <div class="form-group">
-                        <label>Chat Time (opsional)</label>
-                        <input type="text" id="iqcChatTime" placeholder="Contoh: 10:30" value="10:30">
-                    </div>
-                    <div class="form-group">
-                        <label>Status Bar Time (opsional)</label>
-                        <input type="text" id="iqcStatusTime" placeholder="Contoh: 20:45" value="20:45">
-                    </div>
-                    <div class="input-group">
-                        <button id="iqcGenerateBtn"><i class="fas fa-quote-right"></i> Generate Quote</button>
-                    </div>
-                    <div class="loading" id="iqcLoading"><div class="spinner"></div><p id="iqcLoadingText">⏳ Generating quote image...</p></div>
-                    <div class="error" id="iqcError"></div>
-                    <div class="result-container" id="iqcResultContainer">
-                        <img src="" alt="IQC Image" id="iqcResultImage">
-                        <button class="download-btn" id="iqcDownloadBtn"><i class="fas fa-download"></i> Download</button>
-                        <div class="info"><i class="fas fa-info-circle"></i> <span id="iqcInfoText">Generate dulu ya!</span></div>
-                    </div>
-                    <div class="footer-iqc">Made with <i class="fas fa-heart"></i> by ZIZI ELYSIAN</div>
+                <div class="header">
+                    <div class="icon"><i class="fas fa-quote-right"></i></div>
+                    <h1>IQC - Image Quote Creator</h1>
+                    <p>Buat quote image keren dengan teks & waktu custom!</p>
                 </div>
+                <div class="form-group">
+                    <label>Text Quote</label>
+                    <input type="text" id="iqcText" placeholder="Masukkan teks quote...">
+                </div>
+                <div class="form-group">
+                    <label>Chat Time (opsional)</label>
+                    <input type="text" id="iqcChatTime" placeholder="Contoh: 10:30">
+                </div>
+                <div class="form-group">
+                    <label>Status Bar Time (opsional)</label>
+                    <input type="text" id="iqcStatusTime" placeholder="Contoh: 20:45">
+                </div>
+                <div class="input-group">
+                    <button id="iqcGenerateBtn"><i class="fas fa-quote-right"></i> Generate Quote</button>
+                </div>
+                <div class="loading" id="iqcLoading"><div class="spinner"></div><p id="iqcLoadingText">⏳ Generating quote image...</p></div>
+                <div class="error" id="iqcError"></div>
+                <div class="result-container" id="iqcResultContainer">
+                    <img src="" alt="IQC Image" id="iqcResultImage">
+                    <button class="download-btn" id="iqcDownloadBtn"><i class="fas fa-download"></i> Download</button>
+                    <div class="info"><i class="fas fa-info-circle"></i> <span id="iqcInfoText">Generate dulu ya!</span></div>
+                </div>
+                <div class="footer-iqc">Made with <i class="fas fa-heart"></i> by ZIZI ELYSIAN</div>
             `;
         }
 
@@ -4742,41 +5185,37 @@
             });
         }
 
-        // ============================================================
-        // FAKEDEV GENERATOR (Fake Developer Profile)
-        // ============================================================
+        // FAKEDEV
         function renderFakedevGenerator() {
             return `
-                <div class="fakedev-wrapper">
-                    <div class="header">
-                        <div class="icon"><i class="fas fa-user-tie"></i></div>
-                        <h1>FakeDev Profile</h1>
-                        <p>Buat profil developer palsu dengan nama & bio custom!</p>
-                    </div>
-                    <div class="form-group">
-                        <label>Nama Developer</label>
-                        <input type="text" id="fakedevNama" placeholder="Masukkan nama..." value="John Doe">
-                    </div>
-                    <div class="form-group">
-                        <label>Bio / Status</label>
-                        <input type="text" id="fakedevBio" placeholder="Masukkan bio..." value="Full Stack Developer">
-                    </div>
-                    <div class="form-group">
-                        <label>URL Foto Profile (opsional)</label>
-                        <input type="text" id="fakedevImage" placeholder="URL gambar..." value="https://i.pinimg.com/736x/0b/9f/0a/0b9f0a92a598e6c22629004c1027d23f.jpg">
-                    </div>
-                    <div class="input-group">
-                        <button id="fakedevGenerateBtn"><i class="fas fa-user-tie"></i> Generate Profile</button>
-                    </div>
-                    <div class="loading" id="fakedevLoading"><div class="spinner"></div><p id="fakedevLoadingText">⏳ Generating profile...</p></div>
-                    <div class="error" id="fakedevError"></div>
-                    <div class="result-container" id="fakedevResultContainer">
-                        <img src="" alt="FakeDev Image" id="fakedevResultImage">
-                        <button class="download-btn" id="fakedevDownloadBtn"><i class="fas fa-download"></i> Download</button>
-                        <div class="info"><i class="fas fa-info-circle"></i> <span id="fakedevInfoText">Generate dulu ya!</span></div>
-                    </div>
-                    <div class="footer-fakedev">Made with <i class="fas fa-heart"></i> by ZIZI ELYSIAN</div>
+                <div class="header">
+                    <div class="icon"><i class="fas fa-user-tie"></i></div>
+                    <h1>FakeDev Profile</h1>
+                    <p>Buat profil developer palsu dengan nama & bio custom!</p>
                 </div>
+                <div class="form-group">
+                    <label>Nama Developer</label>
+                    <input type="text" id="fakedevNama" placeholder="Masukkan nama...">
+                </div>
+                <div class="form-group">
+                    <label>Bio / Status</label>
+                    <input type="text" id="fakedevBio" placeholder="Masukkan bio...">
+                </div>
+                <div class="form-group">
+                    <label>URL Foto Profile (opsional)</label>
+                    <input type="text" id="fakedevImage" placeholder="URL gambar...">
+                </div>
+                <div class="input-group">
+                    <button id="fakedevGenerateBtn"><i class="fas fa-user-tie"></i> Generate Profile</button>
+                </div>
+                <div class="loading" id="fakedevLoading"><div class="spinner"></div><p id="fakedevLoadingText">⏳ Generating profile...</p></div>
+                <div class="error" id="fakedevError"></div>
+                <div class="result-container" id="fakedevResultContainer">
+                    <img src="" alt="FakeDev Image" id="fakedevResultImage">
+                    <button class="download-btn" id="fakedevDownloadBtn"><i class="fas fa-download"></i> Download</button>
+                    <div class="info"><i class="fas fa-info-circle"></i> <span id="fakedevInfoText">Generate dulu ya!</span></div>
+                </div>
+                <div class="footer-fakedev">Made with <i class="fas fa-heart"></i> by ZIZI ELYSIAN</div>
             `;
         }
 
@@ -4822,7 +5261,7 @@
             }
 
             async function generateFakedev() {
-                const nama = namaInput.value.trim() || 'John Doe';
+                const nama = namaInput.value.trim() || 'Developer';
                 const bio = bioInput.value.trim() || 'Full Stack Developer';
                 const image = imageInput.value.trim() || '';
 
@@ -4882,34 +5321,29 @@
             });
         }
 
-        // ============================================================
-        // FAKEDANA GENERATOR - FIXED
-        // API: https://api.ikyyxd.my.id/canvas/fakedana?amount=
-        // ============================================================
+        // FAKEDANA
         function renderFakedanaGenerator() {
             return `
-                <div class="fakedana-wrapper">
-                    <div class="header">
-                        <div class="icon"><i class="fas fa-wallet"></i></div>
-                        <h1>Fake Dana - Saldo Palsu</h1>
-                        <p>Buat saldo dana palsu dengan amount custom!</p>
-                    </div>
-                    <div class="form-group">
-                        <label>Jumlah Saldo</label>
-                        <input type="text" id="fakedanaAmount" placeholder="Masukkan jumlah saldo..." value="1.500.000">
-                    </div>
-                    <div class="input-group">
-                        <button id="fakedanaGenerateBtn"><i class="fas fa-wallet"></i> Generate Saldo</button>
-                    </div>
-                    <div class="loading" id="fakedanaLoading"><div class="spinner"></div><p id="fakedanaLoadingText">⏳ Generating saldo...</p></div>
-                    <div class="error" id="fakedanaError"></div>
-                    <div class="result-container" id="fakedanaResultContainer">
-                        <img src="" alt="Fake Dana Image" id="fakedanaResultImage">
-                        <button class="download-btn" id="fakedanaDownloadBtn"><i class="fas fa-download"></i> Download</button>
-                        <div class="info"><i class="fas fa-info-circle"></i> <span id="fakedanaInfoText">Generate dulu ya!</span></div>
-                    </div>
-                    <div class="footer-fakedana">Made with <i class="fas fa-heart"></i> by ZIZI ELYSIAN</div>
+                <div class="header">
+                    <div class="icon"><i class="fas fa-wallet"></i></div>
+                    <h1>Fake Dana - Saldo Palsu</h1>
+                    <p>Buat saldo dana palsu dengan amount custom!</p>
                 </div>
+                <div class="form-group">
+                    <label>Jumlah Saldo</label>
+                    <input type="text" id="fakedanaAmount" placeholder="Masukkan jumlah saldo...">
+                </div>
+                <div class="input-group">
+                    <button id="fakedanaGenerateBtn"><i class="fas fa-wallet"></i> Generate Saldo</button>
+                </div>
+                <div class="loading" id="fakedanaLoading"><div class="spinner"></div><p id="fakedanaLoadingText">⏳ Generating saldo...</p></div>
+                <div class="error" id="fakedanaError"></div>
+                <div class="result-container" id="fakedanaResultContainer">
+                    <img src="" alt="Fake Dana Image" id="fakedanaResultImage">
+                    <button class="download-btn" id="fakedanaDownloadBtn"><i class="fas fa-download"></i> Download</button>
+                    <div class="info"><i class="fas fa-info-circle"></i> <span id="fakedanaInfoText">Generate dulu ya!</span></div>
+                </div>
+                <div class="footer-fakedana">Made with <i class="fas fa-heart"></i> by ZIZI ELYSIAN</div>
             `;
         }
 
@@ -4966,7 +5400,6 @@
                 loadingText.textContent = '⏳ Generating saldo dana...';
 
                 try {
-                    // Format amount: hilangkan titik dan koma, tetap pertahankan angka
                     const cleanAmount = amount.replace(/[^0-9]/g, '');
                     if (!cleanAmount) {
                         throw new Error('Masukkan angka yang valid!');
@@ -5024,34 +5457,29 @@
             });
         }
 
-        // ============================================================
-        // SPOTIFY DOWNLOADER - FIXED
-        // API: https://api.ikyyxd.my.id/download/spotifydl?url=
-        // ============================================================
+        // SPOTIFY
         function renderSpotifyDownloader() {
             return `
-                <div class="spotify-wrapper">
-                    <div class="header">
-                        <div class="icon"><i class="fas fa-music"></i></div>
-                        <h1>Spotify Downloader</h1>
-                        <p>Download lagu dari Spotify dengan mudah!</p>
-                    </div>
-                    <div class="form-group">
-                        <label>URL Spotify</label>
-                        <input type="text" id="spotifyUrl" placeholder="https://open.spotify.com/track/..." value="https://open.spotify.com/track/59oEdf5kgI2cicCCs4ORMo">
-                    </div>
-                    <div class="input-group">
-                        <button id="spotifyGenerateBtn"><i class="fas fa-music"></i> Download Lagu</button>
-                    </div>
-                    <div class="loading" id="spotifyLoading"><div class="spinner"></div><p id="spotifyLoadingText">⏳ Mengambil data lagu...</p></div>
-                    <div class="error" id="spotifyError"></div>
-                    <div class="result-container" id="spotifyResultContainer">
-                        <div class="info" style="margin-bottom:12px;"><i class="fas fa-headphones"></i> <span id="spotifySongTitle">Judul lagu</span></div>
-                        <button class="download-btn" id="spotifyDownloadBtn"><i class="fas fa-download"></i> Download MP3</button>
-                        <div class="info"><i class="fas fa-info-circle"></i> <span id="spotifyInfoText">Generate dulu ya!</span></div>
-                    </div>
-                    <div class="footer-spotify">Made with <i class="fas fa-heart"></i> by ZIZI ELYSIAN</div>
+                <div class="header">
+                    <div class="icon"><i class="fas fa-music"></i></div>
+                    <h1>Spotify Downloader</h1>
+                    <p>Download lagu dari Spotify dengan mudah!</p>
                 </div>
+                <div class="form-group">
+                    <label>URL Spotify</label>
+                    <input type="text" id="spotifyUrl" placeholder="https://open.spotify.com/track/...">
+                </div>
+                <div class="input-group">
+                    <button id="spotifyGenerateBtn"><i class="fas fa-music"></i> Download Lagu</button>
+                </div>
+                <div class="loading" id="spotifyLoading"><div class="spinner"></div><p id="spotifyLoadingText">⏳ Mengambil data lagu...</p></div>
+                <div class="error" id="spotifyError"></div>
+                <div class="result-container" id="spotifyResultContainer">
+                    <div class="info" style="margin-bottom:12px;"><i class="fas fa-headphones"></i> <span id="spotifySongTitle">Judul lagu</span></div>
+                    <button class="download-btn" id="spotifyDownloadBtn"><i class="fas fa-download"></i> Download MP3</button>
+                    <div class="info"><i class="fas fa-info-circle"></i> <span id="spotifyInfoText">Generate dulu ya!</span></div>
+                </div>
+                <div class="footer-spotify">Made with <i class="fas fa-heart"></i> by ZIZI ELYSIAN</div>
             `;
         }
 
@@ -5131,7 +5559,6 @@
                     
                     const data = await response.json();
                     
-                    // Cek berbagai kemungkinan response structure
                     let downloadLink = null;
                     let title = 'Unknown Title';
                     
@@ -5185,40 +5612,36 @@
             });
         }
 
-        // ============================================================
-        // DEEPSEEK AI CHAT
-        // ============================================================
+        // DEEPSEEK AI
         function renderDeepseekGenerator() {
             return `
-                <div class="deepseek-wrapper">
-                    <div class="deepseek-hero-box">
-                        <img src="https://www.image2url.com/r2/default/gifs/1784573563022-4da83f93-6113-43ea-8270-8ae28d4b20d1.gif" alt="Elysian Tools" />
-                        <div class="hero-overlay"></div>
-                        <div class="hero-content">
-                            <div class="hero-icon"><i class="fas fa-brain"></i></div>
-                            <div class="hero-title">Elysian <span>AI Chat</span></div>
-                            <div class="hero-desc">Tanya apapun, dapatkan jawaban instan dari AI</div>
-                            <span class="hero-badge-ai"><i class="fas fa-bolt"></i> AI Powered</span>
-                        </div>
+                <div class="deepseek-hero-box">
+                    <img src="https://www.image2url.com/r2/default/gifs/1784573563022-4da83f93-6113-43ea-8270-8ae28d4b20d1.gif" alt="Elysian Tools" />
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <div class="hero-icon"><i class="fas fa-brain"></i></div>
+                        <div class="hero-title">Elysian <span>AI Chat</span></div>
+                        <div class="hero-desc">Tanya apapun, dapatkan jawaban instan dari AI</div>
+                        <span class="hero-badge-ai"><i class="fas fa-bolt"></i> AI Powered</span>
                     </div>
-                    <div class="deepseek-chat-area">
-                        <div class="deepseek-chat-box" id="deepseekChatBox">
-                            <div class="deepseek-chat-message ai">👋 Halo! Saya Elysian AI. Ada yang bisa saya bantu?</div>
-                        </div>
-                        <div class="deepseek-input-group">
-                            <textarea id="deepseekInput" placeholder="Ketik pesan di sini..." rows="1"></textarea>
-                            <button id="deepseekSendBtn"><i class="fas fa-paper-plane"></i> Kirim</button>
-                        </div>
-                        <div class="deepseek-chat-actions">
-                            <button id="deepseekClearBtn"><i class="fas fa-eraser"></i> Clear Chat</button>
-                        </div>
-                        <div class="loading" id="deepseekLoading">
-                            <div class="spinner"></div>
-                            <p id="deepseekLoadingText">⏳ Elysian AI sedang berpikir...</p>
-                        </div>
-                    </div>
-                    <div class="deepseek-footer">Made with <i class="fas fa-heart"></i> by ZIZI ELYSIAN</div>
                 </div>
+                <div class="deepseek-chat-area">
+                    <div class="deepseek-chat-box" id="deepseekChatBox">
+                        <div class="deepseek-chat-message ai">👋 Halo! Saya Elysian AI. Ada yang bisa saya bantu?</div>
+                    </div>
+                    <div class="deepseek-input-group">
+                        <textarea id="deepseekInput" placeholder="Ketik pesan di sini..." rows="1"></textarea>
+                        <button id="deepseekSendBtn"><i class="fas fa-paper-plane"></i> Kirim</button>
+                    </div>
+                    <div class="deepseek-chat-actions">
+                        <button id="deepseekClearBtn"><i class="fas fa-eraser"></i> Clear Chat</button>
+                    </div>
+                    <div class="loading" id="deepseekLoading">
+                        <div class="spinner"></div>
+                        <p id="deepseekLoadingText">⏳ Elysian AI sedang berpikir...</p>
+                    </div>
+                </div>
+                <div class="deepseek-footer">Made with <i class="fas fa-heart"></i> by ZIZI ELYSIAN</div>
             `;
         }
 
@@ -5357,60 +5780,122 @@
         }
 
         // ============================================================
-        // RENDER KATEGORI
+        // TOOL CARD CLICK HANDLER (hanya di halaman Tools)
         // ============================================================
-        function renderCategory(categoryKey, scrollTo = true) {
-            const cat = categories[categoryKey];
-            if (!cat) return;
-            let html = `
-                <div class="category-header">
-                    <i class="fas ${cat.icon}"></i>
-                    <h2>${cat.title}</h2>
-                </div>
-                <div class="category-divider"></div>
-            `;
-            if (categoryKey === 'brat') html += renderBratGenerator();
-            else if (categoryKey === 'convert') html += renderConverter();
-            else if (categoryKey === 'sertifikat') html += renderSertifikatGenerator();
-            else if (categoryKey === 'ektp') html += renderEktpGenerator();
-            else if (categoryKey === 'iqc') html += renderIqcGenerator();
-            else if (categoryKey === 'fakedev') html += renderFakedevGenerator();
-            else if (categoryKey === 'fakedana') html += renderFakedanaGenerator();
-            else if (categoryKey === 'spotify') html += renderSpotifyDownloader();
-            else if (categoryKey === 'deepseek') html += renderDeepseekGenerator();
+        const toolRenderers = {
+            brat: { render: renderBratGenerator, init: initBratGenerator },
+            convert: { render: renderConverter, init: initConverter },
+            sertifikat: { render: renderSertifikatGenerator, init: initSertifikatGenerator },
+            ektp: { render: renderEktpGenerator, init: initEktpGenerator },
+            iqc: { render: renderIqcGenerator, init: initIqcGenerator },
+            fakedev: { render: renderFakedevGenerator, init: initFakedevGenerator },
+            fakedana: { render: renderFakedanaGenerator, init: initFakedanaGenerator },
+            spotify: { render: renderSpotifyDownloader, init: initSpotifyDownloader },
+            deepseek: { render: renderDeepseekGenerator, init: initDeepseekGenerator }
+        };
 
-            wrapper.innerHTML = html;
-            tabs.forEach(t => {
-                t.classList.remove('active');
-                if (t.dataset.category === categoryKey) t.classList.add('active');
+        let currentActiveTool = null;
+
+        toolCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const tool = this.dataset.tool;
+                if (!tool || !toolRenderers[tool]) return;
+
+                // Hide all tool wrappers
+                Object.values(toolWrappers).forEach(w => {
+                    if (w) w.classList.remove('show');
+                });
+
+                // Show selected tool wrapper
+                const wrapper = toolWrappers[tool];
+                if (wrapper) {
+                    if (!wrapper.innerHTML) {
+                        wrapper.innerHTML = toolRenderers[tool].render();
+                        setTimeout(() => {
+                            toolRenderers[tool].init();
+                        }, 100);
+                    }
+                    wrapper.classList.add('show');
+                    
+                    setTimeout(() => {
+                        wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
+                }
+
+                currentActiveTool = tool;
             });
+        });
 
-            if (categoryKey === 'brat') setTimeout(initBratGenerator, 150);
-            else if (categoryKey === 'convert') setTimeout(initConverter, 150);
-            else if (categoryKey === 'sertifikat') setTimeout(initSertifikatGenerator, 150);
-            else if (categoryKey === 'ektp') setTimeout(initEktpGenerator, 150);
-            else if (categoryKey === 'iqc') setTimeout(initIqcGenerator, 150);
-            else if (categoryKey === 'fakedev') setTimeout(initFakedevGenerator, 150);
-            else if (categoryKey === 'fakedana') setTimeout(initFakedanaGenerator, 150);
-            else if (categoryKey === 'spotify') setTimeout(initSpotifyDownloader, 150);
-            else if (categoryKey === 'deepseek') setTimeout(initDeepseekGenerator, 150);
-
-            if (scrollTo) {
-                setTimeout(() => {
-                    categorySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 100);
-            }
+        // ============================================================
+        // NAVIGASI
+        // ============================================================
+        function showHome() {
+            heroSection.style.display = 'flex';
+            heroToolsSectionHome.style.display = 'block';
+            heroToolsSectionTools.style.display = 'none';
+            heroPricing.style.display = 'block';
+            searchWrapper.classList.remove('visible');
+            aboutSection.style.display = 'none';
+            
+            navHome.classList.add('active');
+            navTools.classList.remove('active');
+            navAbout.classList.remove('active');
+            
+            Object.values(toolWrappers).forEach(w => {
+                if (w) w.classList.remove('show');
+            });
         }
 
+        function showTools() {
+            heroSection.style.display = 'none';
+            heroToolsSectionHome.style.display = 'none';
+            heroToolsSectionTools.style.display = 'block';
+            heroPricing.style.display = 'none';
+            searchWrapper.classList.add('visible');
+            aboutSection.style.display = 'none';
+            
+            navTools.classList.add('active');
+            navHome.classList.remove('active');
+            navAbout.classList.remove('active');
+            
+            Object.values(toolWrappers).forEach(w => {
+                if (w) w.classList.remove('show');
+            });
+        }
+
+        function showAbout() {
+            heroSection.style.display = 'none';
+            heroToolsSectionHome.style.display = 'none';
+            heroToolsSectionTools.style.display = 'none';
+            heroPricing.style.display = 'none';
+            searchWrapper.classList.remove('visible');
+            aboutSection.style.display = 'block';
+            
+            navAbout.classList.add('active');
+            navHome.classList.remove('active');
+            navTools.classList.remove('active');
+            
+            Object.values(toolWrappers).forEach(w => {
+                if (w) w.classList.remove('show');
+            });
+        }
+
+        btnStart.addEventListener('click', showTools);
+        btnStartFree.addEventListener('click', showTools);
+        
+        navHome.addEventListener('click', e => { e.preventDefault(); showHome(); });
+        navTools.addEventListener('click', e => { e.preventDefault(); showTools(); });
+        navAbout.addEventListener('click', e => { e.preventDefault(); showAbout(); });
+
         // ============================================================
-        // SEARCH
+        // SEARCH (hanya di halaman Tools)
         // ============================================================
         searchInput.addEventListener('input', function() {
             const query = this.value.toLowerCase().trim();
-            if (!query) { tabs.forEach(tab => tab.style.display = 'flex'); return; }
-            tabs.forEach(tab => {
-                const text = tab.textContent.toLowerCase();
-                tab.style.display = text.includes(query) ? 'flex' : 'none';
+            const cards = document.querySelectorAll('#heroToolsSectionTools .hero-tool-card');
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(query) ? 'block' : 'none';
             });
         });
 
@@ -5422,25 +5907,7 @@
         });
 
         // ============================================================
-        // EVENT LISTENERS
-        // ============================================================
-        tabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-                const cat = this.dataset.category;
-                renderCategory(cat, true);
-                searchInput.value = '';
-                tabs.forEach(t => t.style.display = 'flex');
-            });
-        });
-
-        btnStart.addEventListener('click', showTools);
-        btnStartFree.addEventListener('click', showTools);
-        navHome.addEventListener('click', e => { e.preventDefault(); showHome(); });
-        navTools.addEventListener('click', e => { e.preventDefault(); showTools(); });
-        navAbout.addEventListener('click', e => { e.preventDefault(); showAbout(); });
-
-        // ============================================================
-        // INIT
+        // INIT - Default Home
         // ============================================================
         showHome();
     </script>
